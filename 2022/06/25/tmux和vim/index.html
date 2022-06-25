@@ -14,11 +14,11 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <title>
         
-          数组去重 - null
+          tmux和vim - null
         
     </title>
 
-    <link rel="canonical" href="http://example.com/2022/06/23/数组去重/">
+    <link rel="canonical" href="http://example.com/2022/06/25/tmux和vim/">
 
     <!-- Bootstrap Core CSS -->
 
@@ -122,14 +122,14 @@
                     <div class="post-heading" style="padding:40px">
                         <div class="tags">
                             
-                              <a class="tag" href="/tags/#C++语法" title="C++语法">C++语法</a>
+                              <a class="tag" href="/tags/#Linux" title="Linux">Linux</a>
                             
                         </div>
-                        <h1>数组去重</h1>
+                        <h1>tmux和vim</h1>
                         <h2 class="subheading"></h2>
                         <span class="meta">
                             Posted by John Doe on
-                            2022-06-23
+                            2022-06-25
                         </span>
                     </div>
                 
@@ -265,9 +265,7 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <p>数组去重</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;deque&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;set&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">//set去重方法, 原数组可以无序</span></span><br><span class="line">    <span class="type">int</span> nums1[] = &#123;<span class="number">1</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">5</span>, <span class="number">6</span>&#125;;</span><br><span class="line">    <span class="type">int</span> len = <span class="built_in">sizeof</span>(nums1) / <span class="built_in">sizeof</span>(<span class="type">int</span>); <span class="comment">//计算出元素个数</span></span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">vec</span><span class="params">(nums1, nums1 + len)</span></span>; <span class="comment">//将数组转换成vector数组</span></span><br><span class="line">    <span class="function">set&lt;<span class="type">int</span>&gt; <span class="title">s</span><span class="params">(vec.begin(), vec.end())</span></span>;</span><br><span class="line">    vec.<span class="built_in">assign</span>(s.<span class="built_in">begin</span>(), s.<span class="built_in">end</span>()); <span class="comment">//将s中的数据复制到vec</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> x : vec) &#123;</span><br><span class="line">        cout &lt;&lt; x &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//unique的vector去重方法， 原数组必须有序，若无序则需要排序</span></span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; nums2 = &#123;<span class="number">10</span>, <span class="number">10</span>, <span class="number">11</span>, <span class="number">11</span>, <span class="number">12</span>, <span class="number">13</span>, <span class="number">14</span>, <span class="number">14</span>, <span class="number">15</span>, <span class="number">16</span>&#125;;</span><br><span class="line">    <span class="built_in">sort</span>(nums2.<span class="built_in">begin</span>(), nums2.<span class="built_in">end</span>());</span><br><span class="line">    <span class="comment">//vector&lt;int&gt;::iterator n = unique(nums2.begin(), nums2.end());</span></span><br><span class="line">    <span class="comment">//nums2.erase(n, nums2.end());</span></span><br><span class="line">    nums2.<span class="built_in">erase</span>(<span class="built_in">unique</span>(nums2.<span class="built_in">begin</span>(), nums2.<span class="built_in">end</span>()), nums2.<span class="built_in">end</span>()); <span class="comment">//等同于上面两行</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> y : nums2) &#123;</span><br><span class="line">        cout &lt;&lt; y &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+                <p>aaaaaaaaaaaaaaaaaaaaaaaaaa</p>
 
                 
 
@@ -275,13 +273,9 @@
                 <!-- Pager -->
                 <ul class="pager">
                     
-                        <li class="previous">
-                            <a href="/2022/06/23/Blog/" data-toggle="tooltip" data-placement="top" title="Blog">&larr; Previous post</a>
-                        </li>
-                    
                     
                         <li class="next">
-                            <a href="/2022/05/05/字符串匹配/" data-toggle="tooltip" data-placement="top" title="字符串匹配">Next post &rarr;</a>
+                            <a href="/2022/06/25/常用文件管理命令/" data-toggle="tooltip" data-placement="top" title="Linux常用文件管理命令">Next post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -331,7 +325,7 @@
                     <h5><a href="/tags/">Tags</a></h5>
                     <div class="tags">
                        
-                          <a class="tag" href="/tags/#C++语法" title="C++语法">C++语法</a>
+                          <a class="tag" href="/tags/#Linux" title="Linux">Linux</a>
                         
                     </div>
                 </section>
@@ -506,7 +500,7 @@
 <script>
     // only load tagcloud.js in tag.html
     if($('#tag_cloud').length !== 0){
-        async("http://example.com/2022/06/23/%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D/index.html/js/jquery.tagcloud.js",function(){
+        async("http://example.com/2022/06/25/tmux%E5%92%8Cvim/index.html/js/jquery.tagcloud.js",function(){
             $.fn.tagcloud.defaults = {
                 //size: {start: 1, end: 1, unit: 'em'},
                 color: {start: '#bbbbee', end: '#0085a1'},

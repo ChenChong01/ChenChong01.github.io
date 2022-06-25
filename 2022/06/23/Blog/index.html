@@ -14,11 +14,11 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <title>
         
-          数组去重 - null
+          Blog - null
         
     </title>
 
-    <link rel="canonical" href="http://example.com/2022/06/23/数组去重/">
+    <link rel="canonical" href="http://example.com/2022/06/23/Blog/">
 
     <!-- Bootstrap Core CSS -->
 
@@ -122,10 +122,10 @@
                     <div class="post-heading" style="padding:40px">
                         <div class="tags">
                             
-                              <a class="tag" href="/tags/#C++语法" title="C++语法">C++语法</a>
+                              <a class="tag" href="/tags/#blog" title="blog">blog</a>
                             
                         </div>
-                        <h1>数组去重</h1>
+                        <h1>Blog</h1>
                         <h2 class="subheading"></h2>
                         <span class="meta">
                             Posted by John Doe on
@@ -265,9 +265,73 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <p>数组去重</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;deque&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;set&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">//set去重方法, 原数组可以无序</span></span><br><span class="line">    <span class="type">int</span> nums1[] = &#123;<span class="number">1</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">5</span>, <span class="number">6</span>&#125;;</span><br><span class="line">    <span class="type">int</span> len = <span class="built_in">sizeof</span>(nums1) / <span class="built_in">sizeof</span>(<span class="type">int</span>); <span class="comment">//计算出元素个数</span></span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">vec</span><span class="params">(nums1, nums1 + len)</span></span>; <span class="comment">//将数组转换成vector数组</span></span><br><span class="line">    <span class="function">set&lt;<span class="type">int</span>&gt; <span class="title">s</span><span class="params">(vec.begin(), vec.end())</span></span>;</span><br><span class="line">    vec.<span class="built_in">assign</span>(s.<span class="built_in">begin</span>(), s.<span class="built_in">end</span>()); <span class="comment">//将s中的数据复制到vec</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> x : vec) &#123;</span><br><span class="line">        cout &lt;&lt; x &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//unique的vector去重方法， 原数组必须有序，若无序则需要排序</span></span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; nums2 = &#123;<span class="number">10</span>, <span class="number">10</span>, <span class="number">11</span>, <span class="number">11</span>, <span class="number">12</span>, <span class="number">13</span>, <span class="number">14</span>, <span class="number">14</span>, <span class="number">15</span>, <span class="number">16</span>&#125;;</span><br><span class="line">    <span class="built_in">sort</span>(nums2.<span class="built_in">begin</span>(), nums2.<span class="built_in">end</span>());</span><br><span class="line">    <span class="comment">//vector&lt;int&gt;::iterator n = unique(nums2.begin(), nums2.end());</span></span><br><span class="line">    <span class="comment">//nums2.erase(n, nums2.end());</span></span><br><span class="line">    nums2.<span class="built_in">erase</span>(<span class="built_in">unique</span>(nums2.<span class="built_in">begin</span>(), nums2.<span class="built_in">end</span>()), nums2.<span class="built_in">end</span>()); <span class="comment">//等同于上面两行</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> y : nums2) &#123;</span><br><span class="line">        cout &lt;&lt; y &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+                <h2 id="hexo-s"><a href="#hexo-s" class="headerlink" title="hexo s"></a><strong>hexo s</strong></h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br><span class="line">1</span><br></pre></td></tr></table></figure>
 
+<p>启动本地服务器，用于预览主题。默认地址： <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a></p>
+<ul>
+<li>hexo s 是 hexo server 的缩写，命令效果一致；</li>
+<li>预览的同时可以修改文章内容或主题代码，保存后刷新页面即可；</li>
+<li>对 Hexo 根目录 _config.yml 的修改，需要重启本地服务器后才能预览效果。</li>
+</ul>
+<h2 id="hexo-new"><a href="#hexo-new" class="headerlink" title="hexo new"></a><strong>hexo new</strong></h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo new &quot;学习笔记  六&quot;</span><br><span class="line">1</span><br></pre></td></tr></table></figure>
+
+<p>新建一篇标题为 学习笔记 六 的文章，因为标题里有空格，所以加上了引号。</p>
+<ul>
+<li>文章标题可以在对应 md 文件里改，新建时标题可以写的简单些。</li>
+</ul>
+<h2 id="hexo-d"><a href="#hexo-d" class="headerlink" title="hexo d"></a><strong>hexo d</strong></h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br><span class="line">1</span><br></pre></td></tr></table></figure>
+
+<p>自动生成网站静态文件，并部署到设定的仓库。</p>
+<ul>
+<li>hexo d 是 hexo deploy 的缩写，命令效果一致。</li>
+</ul>
+<h2 id="hexo-clean"><a href="#hexo-clean" class="headerlink" title="hexo clean"></a><strong>hexo clean</strong></h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">1</span><br></pre></td></tr></table></figure>
+
+<p>清除缓存文件 db.json 和已生成的静态文件 public 。</p>
+<ul>
+<li>网站显示异常时可以执行这条命令试试。</li>
+</ul>
+<h2 id="hexo-g"><a href="#hexo-g" class="headerlink" title="hexo g"></a><strong>hexo g</strong></h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">1</span><br></pre></td></tr></table></figure>
+
+<p>生成网站静态文件到默认设置的 public 文件夹。</p>
+<ul>
+<li>便于查看网站生成的静态文件或者手动部署网站；</li>
+<li>如果使用自动部署，不需要先执行该命令；</li>
+<li>hexo g 是 hexo generate 的缩写，命令效果一致。</li>
+</ul>
+<h2 id="hexo-new-page"><a href="#hexo-new-page" class="headerlink" title="hexo new page"></a><strong>hexo new page</strong></h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo new page aboutme</span><br><span class="line">1</span><br></pre></td></tr></table></figure>
+
+<p>新建一个标题为 aboutme 的页面，默认链接地址为 主页地址/aboutme/</p>
+<ul>
+<li>标题可以为中文，但一般习惯用英文；</li>
+<li>页面标题和文章一样可以随意修改；</li>
+<li>页面不会出现在首页文章列表和归档中，也不支持设置分类和标签。</li>
+</ul>
+<h1 id="项目"><a href="#项目" class="headerlink" title="项目"></a>项目</h1><ul>
+<li><p>git init 初始化一个仓库 ，会将该目录下所有文件交给git管理</p>
+</li>
+<li><p>git status 查看当前版本管理状态</p>
+</li>
+<li><p>git add 文件1 文件2… 把有变化的文件(新增的、修改的、删除的) 添加到git暂存区里</p>
+<blockquote>
+<p>git add . 将所有改变的文件统一 加入到暂存区里</p>
+</blockquote>
+</li>
+<li><p>git rm –cached 文件1 文件2 把暂存区中的文件从暂存区移除</p>
+</li>
+<li><p>git commit -m ‘提交描述’</p>
+</li>
+<li><p>git restore 文件1 文件 2 … 放弃文件的改变</p>
+</li>
+<li><p>git log 查看提交历史</p>
+</li>
+<li><p>git reflog 查看命令历史</p>
+</li>
+<li><p>git reset –hard commitid 恢复到指定版本</p>
+</li>
+<li><p>```csharp<br>git remote add origin <a target="_blank" rel="noopener" href="https://gitee.com/nieps/javademo.git">https://gitee.com/nieps/javademo.git</a>   将本地仓库与远程仓库建立联系</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- git push -u origin master 将本地代码推送到远程 首次推送</span><br><span class="line"></span><br><span class="line">- git push -f origin master 强制推送本地代码到远程</span><br><span class="line"></span><br><span class="line">- git remote 查看远程分支的名称</span><br><span class="line"></span><br><span class="line">- git remote -v 查看远程分支的名称及远程仓库的地址</span><br><span class="line"></span><br><span class="line">- git remote rm 远程分支名称 删除要本地仓库与远程仓库的关联关系</span><br><span class="line"></span><br><span class="line">- git pull niu master 拉取远程服务器代码</span><br><span class="line"></span><br><span class="line">- git clone 远程分支地址 将远程代码克隆到本地</span><br><span class="line"></span><br><span class="line">- git 命令 --help 查看命令帮助</span><br><span class="line"></span><br><span class="line">- git branch 查看当前的分支</span><br><span class="line"></span><br><span class="line">- git checkout -b 分支的名称 创建并切换到分支上</span><br><span class="line"></span><br><span class="line">- git switch -c 分支名称 创建并切换到分支上</span><br><span class="line"></span><br><span class="line">- git branch -d 分支名称 删除分支</span><br><span class="line"></span><br><span class="line">  &gt; git branch 分支的名称 创建分支</span><br><span class="line">  &gt;</span><br><span class="line">  &gt; git checkout 分支的名称 切换分支</span><br><span class="line"></span><br><span class="line">  - git merge 分支名称 将分支中的内容合并到当前分支</span><br><span class="line"></span><br><span class="line">  - git switch 分支名称 切换到分支上</span><br><span class="line"></span><br><span class="line">  - git tag 标签名 创建一个标签 默认该标签指向最新的commitid</span><br><span class="line"></span><br><span class="line">  - git tag 查看所有标签</span><br><span class="line"></span><br><span class="line">  - git tag 标签名 commitid 给指定的commit打标签</span><br><span class="line"></span><br><span class="line">  - git tag -d 标签名 删除标签</span><br><span class="line"></span><br><span class="line">  - git push 远程分支名称 标签名 将指定标签推送到远程</span><br><span class="line"></span><br><span class="line">  - git push 远程分支名称 --tags 将所有标签推送到远程</span><br><span class="line"></span><br><span class="line">    &gt; 删除远程标签：</span><br><span class="line">    &gt;</span><br><span class="line">    &gt; 1. 先删除本地 git tag -d 标签名</span><br><span class="line">    &gt; 2. 删除远程 git push 远程分支名称 :/refs/tags/标签名</span><br><span class="line"></span><br><span class="line">  - git push origin(远程分支名称) 本地分支：远程分支 将本地的分支推送到远程分支</span><br><span class="line"></span><br><span class="line">    &gt; git branch -d 删除本地分支</span><br><span class="line">    &gt;</span><br><span class="line">    &gt; git push origin(远程分支名称) --delete 远程仓库分支名称</span><br><span class="line"></span><br><span class="line">```bash</span><br><span class="line">git init</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;****&quot; </span><br><span class="line">git remote add origin ***</span><br><span class="line">git push -u origin master</span><br><span class="line">git pull --rebase origin master</span><br></pre></td></tr></table></figure></li>
+</ul>
 
                 
 
@@ -276,12 +340,12 @@
                 <ul class="pager">
                     
                         <li class="previous">
-                            <a href="/2022/06/23/Blog/" data-toggle="tooltip" data-placement="top" title="Blog">&larr; Previous post</a>
+                            <a href="/2022/06/25/常用文件管理命令/" data-toggle="tooltip" data-placement="top" title="Linux常用文件管理命令">&larr; Previous post</a>
                         </li>
                     
                     
                         <li class="next">
-                            <a href="/2022/05/05/字符串匹配/" data-toggle="tooltip" data-placement="top" title="字符串匹配">Next post &rarr;</a>
+                            <a href="/2022/06/23/数组去重/" data-toggle="tooltip" data-placement="top" title="数组去重">Next post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -331,7 +395,7 @@
                     <h5><a href="/tags/">Tags</a></h5>
                     <div class="tags">
                        
-                          <a class="tag" href="/tags/#C++语法" title="C++语法">C++语法</a>
+                          <a class="tag" href="/tags/#blog" title="blog">blog</a>
                         
                     </div>
                 </section>
@@ -506,7 +570,7 @@
 <script>
     // only load tagcloud.js in tag.html
     if($('#tag_cloud').length !== 0){
-        async("http://example.com/2022/06/23/%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D/index.html/js/jquery.tagcloud.js",function(){
+        async("http://example.com/2022/06/23/Blog/index.html/js/jquery.tagcloud.js",function(){
             $.fn.tagcloud.defaults = {
                 //size: {start: 1, end: 1, unit: 'em'},
                 color: {start: '#bbbbee', end: '#0085a1'},
