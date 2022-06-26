@@ -14,11 +14,11 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <title>
         
-          test - null
+          二维费用的背包问题 - null
         
     </title>
 
-    <link rel="canonical" href="http://example.com/2022/06/25/test/">
+    <link rel="canonical" href="http://example.com/2022/04/25/二维费用的背包问题/">
 
     <!-- Bootstrap Core CSS -->
 
@@ -122,12 +122,14 @@
                     <div class="post-heading" style="padding:40px">
                         <div class="tags">
                             
+                              <a class="tag" href="/tags/#背包九讲" title="背包九讲">背包九讲</a>
+                            
                         </div>
-                        <h1>test</h1>
+                        <h1>二维费用的背包问题</h1>
                         <h2 class="subheading"></h2>
                         <span class="meta">
                             Posted by John Doe on
-                            2022-06-25
+                            2022-04-25
                         </span>
                     </div>
                 
@@ -263,16 +265,37 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <h2 id="xxx小王到此"><a href="#xxx小王到此" class="headerlink" title="xxx小王到此"></a>xxx小王到此</h2>
+                <p>二维费用的背包问题与01 背包很像，只不过实在 01 背包的基础上加上了一个条件限制。</p>
+<p>01 背包的动态转移方程是</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">f[i][j] = f[i - <span class="number">1</span>][j] <span class="comment">//不含i</span></span><br><span class="line">f[i][j] = <span class="built_in">max</span>(f[i][j], f[i - <span class="number">1</span>][j - v] + w); <span class="comment">//含i</span></span><br><span class="line">f[j] = <span class="built_in">max</span>(f[j], f[j - v] + w) <span class="comment">//优化</span></span><br></pre></td></tr></table></figure>
+
+<p>那么这个多了个条件，那么可以再开一维，变成三维</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">f[i][j][k] = f[i - <span class="number">1</span>][j][k] <span class="comment">//不含i</span></span><br><span class="line">f[i][j][k] = <span class="built_in">max</span>(f[i][j][k], f[i - <span class="number">1</span>][j - v1][k - v2] + w); <span class="comment">//含i</span></span><br><span class="line">f[j][k] = <span class="built_in">max</span>(f[j][k, f[j - v1][k - v2] + w) <span class="comment">//优化</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>样例1：</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">题目链接 ： https://www.acwing.com/problem/content/8/</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">110</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n, V, M;</span><br><span class="line"><span class="type">int</span> f[N][N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; V &gt;&gt; M;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="type">int</span> v, m, w;</span><br><span class="line">        cin &gt;&gt; v &gt;&gt; m &gt;&gt; w;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = V; j &gt;= v; j -- )</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> k = M; k &gt;= m; k -- )</span><br><span class="line">                f[j][k] = <span class="built_in">max</span>(f[j][k], f[j - v][k - m] + w);</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; f[V][M] &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>样例2：</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">题目链接 ： https://www.acwing.com/problem/content/1024/</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1010</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n, m, x;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> f[N][N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; m &gt;&gt; x;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; x; i++) &#123;</span><br><span class="line">        <span class="type">int</span> v1, v2;</span><br><span class="line">        cin &gt;&gt; v1 &gt;&gt; v2;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = n; j &gt;= v1; j -- )</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> k = m - <span class="number">1</span>; k &gt;= v2; k -- )</span><br><span class="line">                f[j][k] = <span class="built_in">max</span>(f[j][k], f[j - v1][k - v2] + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    cout &lt;&lt; f[n][m - <span class="number">1</span>] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    <span class="type">int</span> k = m - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (k &gt; <span class="number">0</span> &amp;&amp; f[n][k - <span class="number">1</span>] == f[n][m - <span class="number">1</span>]) k -- ;</span><br><span class="line">    cout &lt;&lt; m - k &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
                 
 
                 <hr>
                 <!-- Pager -->
                 <ul class="pager">
                     
+                        <li class="previous">
+                            <a href="/2022/05/05/vim常用命令/" data-toggle="tooltip" data-placement="top" title="vim常用命令">&larr; Previous post</a>
+                        </li>
+                    
                     
                         <li class="next">
-                            <a href="/2022/06/25/tmux和vim/" data-toggle="tooltip" data-placement="top" title="tmux和vim">Next post &rarr;</a>
+                            <a href="/2022/04/22/背包问题1-0/" data-toggle="tooltip" data-placement="top" title="背包问题1.0">Next post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -322,6 +345,8 @@
                     <h5><a href="/tags/">Tags</a></h5>
                     <div class="tags">
                        
+                          <a class="tag" href="/tags/#背包九讲" title="背包九讲">背包九讲</a>
+                        
                     </div>
                 </section>
                 
@@ -495,7 +520,7 @@
 <script>
     // only load tagcloud.js in tag.html
     if($('#tag_cloud').length !== 0){
-        async("http://example.com/2022/06/25/test/index.html/js/jquery.tagcloud.js",function(){
+        async("http://example.com/2022/04/25/%E4%BA%8C%E7%BB%B4%E8%B4%B9%E7%94%A8%E7%9A%84%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/index.html/js/jquery.tagcloud.js",function(){
             $.fn.tagcloud.defaults = {
                 //size: {start: 1, end: 1, unit: 'em'},
                 color: {start: '#bbbbee', end: '#0085a1'},

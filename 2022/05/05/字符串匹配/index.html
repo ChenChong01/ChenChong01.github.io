@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="一个计算机小白的分享">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          字符串匹配 - null
+        
+    </title>
+
+    <link rel="canonical" href="http://example.com/2022/05/05/字符串匹配/">
+
+    <!-- Bootstrap Core CSS -->
+
+   
+<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.4.1/css/bootstrap.min.css">
+
+
+    
+
+    <!-- Custom CSS --> 
+    
+<link rel="stylesheet" href="/css/beantech.min.css">
+
+
+    
+<link rel="stylesheet" href="/css/donate.css">
+
+	
+<link rel="stylesheet" href="/css/w3.css">
+
+    <!-- Pygments Highlight CSS -->
+    
+<link rel="stylesheet" href="/css/highlight.css">
+
+
+    
+<link rel="stylesheet" href="/css/widget.css">
+
+
+    
+<link rel="stylesheet" href="/css/rocket.css">
+
+
+    
+<link rel="stylesheet" href="/css/signature.css">
+
+
+    
+<link rel="stylesheet" href="/css/toc.css">
+
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+    }
+   .post-heading{
+    padding:20px;
+    }
+  .person {
+    border: 10px solid transparent;
+    margin-bottom: 25px;
+    width: 80%;
+    height: 80%;
+    opacity: 0.7;
+  }
+  .person:hover {
+    border-color: #f1f1f1;
+  }
+
+</style>
+
+<header id="headerid" class="w3-indigo intro-header" style="position:relative;">
+    <!-- Signature -->
+	
+        <div class="container">
+            <div class=" row" >
+			
+			<canvas id="particles-js-canvas" style="position:absolute;z-index:1;top:0px;left:0px;" width="100%" height="50%"></canvas>
+			
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1" style="z-index:2;">
+                
+                    <div class="post-heading" style="padding:40px">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#字符串匹配" title="字符串匹配">字符串匹配</a>
+                            
+                        </div>
+                        <h1>字符串匹配</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted by John Doe on
+                            2022-05-05
+                        </span>
+                    </div>
+                
+                </div>
+            </div>
+        </div>
+  
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">AC博客</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a  href="/">Homepage</a>
+                    </li>
+		    
+                    
+
+                        
+                        <li>
+           
+                            <a  href="#">menu1</a>
+                           
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+           
+                            <a  href="#">menu2</a>
+                           
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+           
+                            <a  href="#">menu3</a>
+                           
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+           
+                            <a  href="#">menu3</a>
+                           
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+           
+                            <a  href="#">menu5</a>
+                           
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Modify by Yu-Hsuan Yen -->
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h2 id="字符串匹配"><a href="#字符串匹配" class="headerlink" title="字符串匹配"></a>字符串匹配</h2><p>字符串又称模式匹配（pattern matching）。该问题可以概括为：给定字符串<code>S</code>和<code>T</code>，在母串<code>S</code>中寻找子串<code>T</code>。子串<code>T</code>称为模式串 (pattern)。</p>
+<h3 id="一、暴力匹配"><a href="#一、暴力匹配" class="headerlink" title="一、暴力匹配"></a>一、暴力匹配</h3><p>暴力算法（Brute Force Algorithm）又叫朴素字符串匹配算法（Naive String Matching Algorithm）。<br>该算法的基本思路就是将字符一个一个地进行比较：</p>
+<p>​        如果S和T两个字符串的第一个字符相同就比较第二个字符,如果相同就一直继续；<br>​        如果其中有某一个字符不同，则将T字符串向后移一位，将S字符串的第二个字符与T的字符串的第一个字符重新开始比较。<br>​        循环往复，一直到结束。</p>
+<p>1.<img src="http://www.ruanyifeng.com/blogimg/asset/201305/bg2013050103.png" alt="img"></p>
+<p>首先，字符串”BBC ABCDAB ABCDABCDABDE”的第一个字符与搜索词”ABCDABD”的第一个字符，进行比较。因为B与A不匹配，所以搜索词后移一位。</p>
+<p>2.<img src="http://www.ruanyifeng.com/blogimg/asset/201305/bg2013050104.png" alt="img"></p>
+<p>因为B与A不匹配，搜索词再往后移。</p>
+<p>3.<img src="http://www.ruanyifeng.com/blogimg/asset/201305/bg2013050105.png" alt="img"></p>
+<p>就这样，直到字符串有一个字符，与搜索词的第一个字符相同为止。</p>
+<p>4.<img src="http://www.ruanyifeng.com/blogimg/asset/201305/bg2013050106.png" alt="img"></p>
+<p>接着比较字符串和搜索词的下一个字符，还是相同。</p>
+<p>5.<img src="http://www.ruanyifeng.com/blogimg/asset/201305/bg2013050107.png" alt="img"></p>
+<p>直到字符串有一个字符，与搜索词对应的字符不相同为止。</p>
+<p>6.<img src="http://www.ruanyifeng.com/blogimg/asset/201305/bg2013050113.png" alt="img"></p>
+<p>重复上述操作，直至匹配。</p>
+<p><strong>代码演示01：</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line">string S, T;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	cin &gt;&gt; S &gt;&gt; T;</span><br><span class="line">	</span><br><span class="line">	<span class="type">int</span> i = <span class="number">0</span>, j = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(i &lt; S.<span class="built_in">size</span>() &amp;&amp; j &lt; T.<span class="built_in">size</span>()) &#123;</span><br><span class="line">		<span class="keyword">if</span>(S[i] == T[j]) &#123;</span><br><span class="line">			i ++;</span><br><span class="line">			j ++;</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			i = i - j + <span class="number">1</span>; <span class="comment">//主串回溯到上次回溯位置的下一个位置</span></span><br><span class="line">			j = <span class="number">0</span>; <span class="comment">//模式串回溯到第一个位置</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(j = T.<span class="built_in">size</span>() - <span class="number">1</span>) cout &lt;&lt; <span class="string">&quot;yes&quot;</span> &lt;&lt; endl; <span class="comment">//模式串匹配到最后一个位置</span></span><br><span class="line">	<span class="keyword">else</span> cout &lt;&lt; <span class="string">&quot;no&quot;</span> &lt;&lt; endl;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+
+<p><strong>代码演示02：</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*************************************************************************</span></span><br><span class="line"><span class="comment">      &gt; File Name: KMP01.cpp</span></span><br><span class="line"><span class="comment">      &gt; Author: 小学生陈冲同学</span></span><br><span class="line"><span class="comment">      &gt; Mail: 2092518741@qq.com</span></span><br><span class="line"><span class="comment">      &gt; Created Time: Mon May  2 20:14:39 2022</span></span><br><span class="line"><span class="comment"> ************************************************************************/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1010</span>;</span><br><span class="line"><span class="type">char</span> text[N], pattern[N];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">brute_force</span><span class="params">(<span class="type">char</span> *s, <span class="type">char</span> *t)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> len1 = <span class="built_in">strlen</span>(s);</span><br><span class="line">    <span class="type">int</span> len2 = <span class="built_in">strlen</span>(t);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; len1 - len2 + <span class="number">1</span>; i ++ ) &#123;</span><br><span class="line">        <span class="type">int</span> j = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(; t[j]; j ++ ) &#123;</span><br><span class="line">            <span class="keyword">if</span>(t[j] == s[i + j]) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(!t[j]) <span class="keyword">return</span> i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s%s&quot;</span>, text, pattern);</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;brute_force(&quot;</span> &lt;&lt; text &lt;&lt; <span class="string">&quot;, &quot;</span> &lt;&lt; pattern &lt;&lt; <span class="string">&quot;) = &quot;</span> &lt;&lt; <span class="built_in">brute_force</span>(text, pattern) &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="二、KMP算法"><a href="#二、KMP算法" class="headerlink" title="二、KMP算法"></a>二、KMP算法</h3><p><strong>kmp算法简介</strong></p>
+<p>Knuth-Morris-Pratt算法（简称KMP）是最常用的字符串匹配算法之一。它以三个发明者命名，起头的那个K就是著名科学家Donald Knuth。</p>
+<p><img src="https://s3.bmp.ovh/imgs/2022/05/05/c5d0a57b50ba31c2.png"></p>
+<p><strong>通过暴力匹配找出KMP算法规律</strong></p>
+<p>首先，母串”aecaeaecaed”的第一个字符与模式串”aecaed”的第一个字符，进行比较。因为a与a匹配，所以母串指针与模式串指针同时后移</p>
+<p>时间复杂度O（n）</p>
+<p><img src="https://s3.bmp.ovh/imgs/2022/05/05/4a726a79312d048e.png"></p>
+<p>指针后移后重复操作。匹配到图中位置，发现并不匹配</p>
+<img src = 'https://s3.bmp.ovh/imgs/2022/05/05/0db3b70f1556af7c.png' >
+
+<p>模式串后移一位，母串指针回到“e”位置，模式串指针回到开头“a”的位置。（母串指针前移是造成暴力匹配效率低的重要因素之一）</p>
+<p><img src="https://s3.bmp.ovh/imgs/2022/05/05/2383f16506579461.png"></p>
+<p>重复以上操作匹配成功</p>
+<p><img src="https://s3.bmp.ovh/imgs/2022/05/05/129314f07ccb1fbb.png"></p>
+<p>![Image 345](E:\截图保存\Image 345.png)</p>
+<p>接下来引入暴力优化为kmp算法</p>
+<p><img src="https://s3.bmp.ovh/imgs/2022/05/05/8637a036a6b3ca8b.png"></p>
+<p>模式串前移</p>
+<p><img src="https://s3.bmp.ovh/imgs/2022/05/05/00bff45a55ebcc7c.png"></p>
+<p>模式串自身之间的关系（前缀与后缀）</p>
+<p><img src="https://s3.bmp.ovh/imgs/2022/05/05/4f60bb5108ffcd70.png"></p>
+<p>next数组</p>
+<p><img src="https://s3.bmp.ovh/imgs/2022/05/05/33d16e04b122be03.png"></p>
+<p>课堂练习求next数组</p>
+<p><img src="https://s3.bmp.ovh/imgs/2022/05/05/03d00458d2aef83a.png"></p>
+<p>答案</p>
+<p><img src="https://s3.bmp.ovh/imgs/2022/05/05/d9df00143871de77.png"></p>
+<p>模拟KMP算法</p>
+<p><img src="https://s3.bmp.ovh/imgs/2022/05/05/36801230461c988c.png"></p>
+<p><img src="https://s3.bmp.ovh/imgs/2022/05/05/cffc99f860d7d452.png"></p>
+<p>kmp算法的关键就是母串指针从始至终并未前移</p>
+<p><strong>代码实现：</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*************************************************************************</span></span><br><span class="line"><span class="comment">      &gt; File Name: KMP01.cpp</span></span><br><span class="line"><span class="comment">      &gt; Author: 小学生陈冲同学</span></span><br><span class="line"><span class="comment">      &gt; Mail: 2092518741@qq.com</span></span><br><span class="line"><span class="comment">      &gt; Created Time: Mon May  2 20:14:39 2022</span></span><br><span class="line"><span class="comment"> ************************************************************************/</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1010</span>;</span><br><span class="line"><span class="type">char</span> text[N], pattern[N];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">kmp</span><span class="params">(<span class="type">char</span> *s, <span class="type">char</span> *t)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> len1 = <span class="built_in">strlen</span>(s);</span><br><span class="line">    <span class="type">int</span> len2 = <span class="built_in">strlen</span>(t);</span><br><span class="line">    <span class="type">int</span> *next =  (<span class="type">int</span> *)<span class="built_in">malloc</span>(<span class="built_in">sizeof</span>(<span class="type">int</span>) * len2);</span><br><span class="line">    next[<span class="number">0</span>] = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>, j = <span class="number">-1</span>; i &lt; len2; i++) &#123; <span class="comment">//初始化next数组</span></span><br><span class="line">        <span class="keyword">while</span>(j != <span class="number">-1</span> &amp;&amp; t[j + <span class="number">1</span>] != t[i]) j = next[j];</span><br><span class="line">        <span class="keyword">if</span>(t[j + <span class="number">1</span>] == t[i]) j += <span class="number">1</span>;</span><br><span class="line">        next[i] = j;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>, j = <span class="number">-1</span>; s[i]; i++) &#123;</span><br><span class="line">        <span class="keyword">while</span>(j != <span class="number">-1</span> &amp;&amp; t[j + <span class="number">1</span>] != s[i]) j = next[j];</span><br><span class="line">        <span class="keyword">if</span>(t[j + <span class="number">1</span>] == s[i]) j += <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(t[j + <span class="number">1</span>] == <span class="number">0</span>) <span class="keyword">return</span> i - len2 + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">free</span>(next);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s%s&quot;</span>, text, pattern);</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;kmp(&quot;</span> &lt;&lt; text &lt;&lt; <span class="string">&quot;, &quot;</span> &lt;&lt; pattern &lt;&lt; <span class="string">&quot;) = &quot;</span> &lt;&lt; <span class="built_in">kmp</span>(text, pattern) &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="三、Sunday算法"><a href="#三、Sunday算法" class="headerlink" title="三、Sunday算法"></a>三、Sunday算法</h3><p><strong>sunday算法简介</strong></p>
+<p>​    Sunday算法由Daniel M.Sunday在1990年提出，它的思想跟BM算法很相似：只不过Sunday算法是从前往后匹配，在匹配失败时关注的是主串中参加匹配的最末位字符的下一位字符。</p>
+<p>​    如果该字符没有在模式串中出现则直接跳过，即移动位数 = 模式串长度 + 1；<br>​    否则，其移动位数 = 模式串长度 - 该字符最右出现的位置(以0开始，即最后出现的位置) = 模式串中该字符最右出现的位置到尾部的距离 + 1。<br>下面举个例子说明下Sunday算法。假定现在要在主串”substring searching”中查找模式串”search”。</p>
+<p>时间复杂度最好为O（m / n）,适合查找模式串是否在母串出现过</p>
+<p>第一次出现不匹配</p>
+<p><img src="https://s3.bmp.ovh/imgs/2022/05/05/91eee5220f62505a.png"></p>
+<p>匹配失败，关注主串中参加匹配的最末位字符的下一位字符</p>
+<p><img src="https://s3.bmp.ovh/imgs/2022/05/05/d5e5c2d1c1f78333.png"></p>
+<p>在模式串查找是否有这个字符</p>
+<p><img src="https://s3.bmp.ovh/imgs/2022/05/05/0be84cc61a856484.png"></p>
+<p>若模式串中出现此字符，模式串右移，从字符串首位重新开始匹配</p>
+<p><img src="https://s3.bmp.ovh/imgs/2022/05/05/7fab9834f622f81a.png"></p>
+<p>如果仍有匹配失败的情况，循环上述过程，直至匹配成功或模式串无法再右移</p>
+<p><img src="https://s3.bmp.ovh/imgs/2022/05/05/a4ed804d584bded6.png"></p>
+<p><strong>代码实现</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*************************************************************************</span></span><br><span class="line"><span class="comment">      &gt; File Name: KMP01.cpp</span></span><br><span class="line"><span class="comment">      &gt; Author: 小学生陈冲同学</span></span><br><span class="line"><span class="comment">      &gt; Mail: 2092518741@qq.com</span></span><br><span class="line"><span class="comment">      &gt; Created Time: Mon May  2 20:14:39 2022</span></span><br><span class="line"><span class="comment"> ************************************************************************/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;deque&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1010</span>;</span><br><span class="line"><span class="type">char</span> text[N], pattern[N];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">sunday</span><span class="params">(<span class="type">char</span> *s, <span class="type">char</span> *t)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//初始化ind数组，ind数组存储的是字符存储在模式串的倒数第几位</span></span><br><span class="line">    <span class="type">int</span> ind[<span class="number">128</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">    <span class="type">int</span> len1 = <span class="built_in">strlen</span>(s);</span><br><span class="line">    <span class="type">int</span> len2 = <span class="built_in">strlen</span>(t);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">128</span>; i++) ind[i] = len2 + <span class="number">1</span>; <span class="comment">//默认倒数len + 1位</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; t[i]; i++) ind[t[i]] = len2 - i; <span class="comment">//从头遍历，两个字符若相同，则会覆盖，最终值为最后出现的位置</span></span><br><span class="line">    <span class="comment">//遍历</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; len1 - len2 + <span class="number">1</span>; ) &#123;</span><br><span class="line">        <span class="type">int</span> flag = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">0</span>; j &lt; len2; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(t[j] == s[i + j]) <span class="keyword">continue</span>;</span><br><span class="line">            i += ind[s[i + len2]];</span><br><span class="line">            flag = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(flag) <span class="keyword">return</span> i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s%s&quot;</span>, text, pattern);</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;sunday(&quot;</span> &lt;&lt; text &lt;&lt; <span class="string">&quot;, &quot;</span> &lt;&lt; pattern &lt;&lt; <span class="string">&quot;) = &quot;</span> &lt;&lt; <span class="built_in">sunday</span>(text, pattern) &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+                
+
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/2022/06/23/数组去重/" data-toggle="tooltip" data-placement="top" title="数组去重">&larr; Previous post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/2022/05/05/vim常用命令/" data-toggle="tooltip" data-placement="top" title="vim常用命令">Next post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                <br>
+
+                <!--打赏-->
+                
+                <!--打赏-->
+
+                <br>
+                <!--分享-->
+                
+                    <div class="social-share"  data-wechat-qrcode-helper="" align="center"></div>
+                    <!--  css & js -->
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+                
+                <!--分享-->
+                <br>                       
+                
+                <!-- require APlayer -->
+                
+
+                <!-- disqus comment start -->
+                
+                <!-- disqus comment end -->
+
+                
+				
+            </div>
+
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">Tags</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#字符串匹配" title="字符串匹配">字符串匹配</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="http://www.sumoon.com" target="_blank">ACE theme</a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/kinggozhang">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; John Doe 2022 
+                    <br>
+                    Powered by <a target="_blank" rel="noopener" href="http://www.hexo.io">Hexo</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    Theme by <a target="_blank" rel="noopener" href="https://github.com/kinggozhang/hexo-theme-ace">ACE</a> 
+					
+					
+					<i class="fa fa-eye" id="leancounter"></i>
+					
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+
+   
+<script src="https://cdn.staticfile.org/jquery/2.2.4/jquery.min.js"></script>
+
+
+
+
+<!-- Bootstrap Core JavaScript -->
+
+   
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/hux-blog.min.js"></script>
+
+
+
+	
+<script src="/js/particles.js"></script>
+
+	
+<script src="/js/particles_config.js"></script>
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://example.com/2022/05/05/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D/index.html/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+
+
+<!-- Baidu Tongji -->
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+<!-- Image to hack wechat -->
+<img src="http://example.com/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>
