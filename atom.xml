@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>AC博客</title>
+  
+  
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2022-06-25T12:01:31.454Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>John Doe</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>tmux和vim</title>
+    <link href="http://example.com/2022/06/25/tmux-he-vim/"/>
+    <id>http://example.com/2022/06/25/tmux-he-vim/</id>
+    <published>2022-06-25T12:00:47.000Z</published>
+    <updated>2022-06-25T12:01:31.454Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;aaaaaaaaaaaaaaaaaaaaaaaaaa&lt;/p&gt;
+</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Linux" scheme="http://example.com/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux常用文件管理命令</title>
+    <link href="http://example.com/2022/06/25/chang-yong-wen-jian-guan-li-ming-ling/"/>
+    <id>http://example.com/2022/06/25/chang-yong-wen-jian-guan-li-ming-ling/</id>
+    <published>2022-06-25T11:39:27.000Z</published>
+    <updated>2022-06-25T12:07:29.497Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;aaaaaaaaaaaaa&lt;/p&gt;
+</summary>
+        
+      
+    
+    
+    
+    
+    <category term="linux" scheme="http://example.com/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Blog</title>
+    <link href="http://example.com/2022/06/23/blog/"/>
+    <id>http://example.com/2022/06/23/blog/</id>
+    <published>2022-06-23T12:01:45.000Z</published>
+    <updated>2022-06-23T12:06:12.291Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;hexo-s&quot;&gt;&lt;a href=&quot;#hexo-s&quot; class=&quot;headerlink&quot; title=&quot;hexo s&quot;&gt;&lt;/a&gt;&lt;strong&gt;hexo s&lt;/strong&gt;&lt;/h2&gt;&lt;pre class=&quot;line-numbers</summary>
+        
+      
+    
+    
+    
+    
+    <category term="blog" scheme="http://example.com/tags/blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数组去重</title>
+    <link href="http://example.com/2022/06/23/shu-zu-qu-chong/"/>
+    <id>http://example.com/2022/06/23/shu-zu-qu-chong/</id>
+    <published>2022-06-23T09:09:30.000Z</published>
+    <updated>2022-06-23T09:10:11.202Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;数组去重&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-c++&quot; data-language=&quot;c++&quot;&gt;&lt;code class=&quot;language-c++&quot;&gt;#include &amp;lt;iostream&amp;gt;
+#include</summary>
+        
+      
+    
+    
+    
+    
+    <category term="C++语法" scheme="http://example.com/tags/C-%E8%AF%AD%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>字符串匹配</title>
+    <link href="http://example.com/2022/05/05/zi-fu-chuan-pi-pei/"/>
+    <id>http://example.com/2022/05/05/zi-fu-chuan-pi-pei/</id>
+    <published>2022-05-05T07:00:54.000Z</published>
+    <updated>2022-05-05T07:01:31.390Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;字符串匹配&quot;&gt;&lt;a href=&quot;#字符串匹配&quot; class=&quot;headerlink&quot; title=&quot;字符串匹配&quot;&gt;&lt;/a&gt;字符串匹配&lt;/h2&gt;&lt;p&gt;字符串又称模式匹配（pattern</summary>
+        
+      
+    
+    
+    
+    
+    <category term="字符串匹配" scheme="http://example.com/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vim常用命令</title>
+    <link href="http://example.com/2022/05/05/vim-chang-yong-ming-ling/"/>
+    <id>http://example.com/2022/05/05/vim-chang-yong-ming-ling/</id>
+    <published>2022-05-05T06:13:53.000Z</published>
+    <updated>2022-05-05T06:14:59.808Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h4 id=&quot;1、简介&quot;&gt;&lt;a href=&quot;#1、简介&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="linux" scheme="http://example.com/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>二维费用的背包问题</title>
+    <link href="http://example.com/2022/04/25/er-wei-fei-yong-de-bei-bao-wen-ti/"/>
+    <id>http://example.com/2022/04/25/er-wei-fei-yong-de-bei-bao-wen-ti/</id>
+    <published>2022-04-25T11:18:02.000Z</published>
+    <updated>2022-04-25T11:30:30.885Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;二维费用的背包问题与01 背包很像，只不过实在 01 背包的基础上加上了一个条件限制。&lt;/p&gt;
+&lt;p&gt;01 背包的动态转移方程是&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-c++&quot; data-language=&quot;c++&quot;&gt;&lt;code</summary>
+        
+      
+    
+    
+    
+    
+    <category term="背包九讲" scheme="http://example.com/tags/%E8%83%8C%E5%8C%85%E4%B9%9D%E8%AE%B2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>背包问题1.0</title>
+    <link href="http://example.com/2022/04/22/bei-bao-wen-ti-1-0/"/>
+    <id>http://example.com/2022/04/22/bei-bao-wen-ti-1-0/</id>
+    <published>2022-04-22T10:35:53.000Z</published>
+    <updated>2022-04-26T07:37:19.634Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;0-1背包、完全背包、多重背包小结&lt;/p&gt;
+&lt;h3 id=&quot;1、0-1背包&quot;&gt;&lt;a href=&quot;#1、0-1背包&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="背包九讲" scheme="http://example.com/tags/%E8%83%8C%E5%8C%85%E4%B9%9D%E8%AE%B2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>STL小结</title>
+    <link href="http://example.com/2022/04/21/stl-xiao-jie/"/>
+    <id>http://example.com/2022/04/21/stl-xiao-jie/</id>
+    <published>2022-04-21T11:14:22.000Z</published>
+    <updated>2022-04-21T11:17:14.426Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;STL(standard template libaray-标准模板库)：&lt;strong&gt;是C++标准库的重要组成部分，不仅是一个可复用的组件库，而且是一个包括数据结构与算法的软件框架&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;模板：&lt;/p&gt;
+&lt;pre</summary>
+        
+      
+    
+    
+    
+    
+    <category term="C++语法" scheme="http://example.com/tags/C-%E8%AF%AD%E6%B3%95/"/>
+    
+  </entry>
+  
+</feed>
