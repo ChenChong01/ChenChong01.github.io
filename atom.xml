@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-06-25T12:01:31.454Z</updated>
+  <updated>2022-06-26T09:26:58.601Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://example.com/2022/06/25/tmux-he-vim/"/>
     <id>http://example.com/2022/06/25/tmux-he-vim/</id>
     <published>2022-06-25T12:00:47.000Z</published>
-    <updated>2022-06-25T12:01:31.454Z</updated>
+    <updated>2022-06-26T09:26:58.601Z</updated>
     
     
       
@@ -36,7 +36,7 @@
     
     
     
-    <category term="Linux" scheme="http://example.com/tags/Linux/"/>
+    <category term="linux" scheme="http://example.com/tags/linux/"/>
     
   </entry>
   
@@ -69,7 +69,7 @@
     <link href="http://example.com/2022/06/23/blog/"/>
     <id>http://example.com/2022/06/23/blog/</id>
     <published>2022-06-23T12:01:45.000Z</published>
-    <updated>2022-06-23T12:06:12.291Z</updated>
+    <updated>2022-06-26T09:31:10.242Z</updated>
     
     
       
