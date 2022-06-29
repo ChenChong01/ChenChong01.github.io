@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-06-26T09:57:37.020Z</updated>
+  <updated>2022-06-29T14:08:36.869Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux常用文件管理指令</title>
+    <link href="http://example.com/2022/06/28/linux-chang-yong-wen-jian-guan-li-zhi-ling/"/>
+    <id>http://example.com/2022/06/28/linux-chang-yong-wen-jian-guan-li-zhi-ling/</id>
+    <published>2022-06-28T08:16:37.000Z</published>
+    <updated>2022-06-29T14:08:36.869Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;ctrl-c&quot;&gt;&lt;a href=&quot;#ctrl-c&quot; class=&quot;headerlink&quot; title=&quot;ctrl c:&quot;&gt;&lt;/a&gt;ctrl c:&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;取消命令，并且换行&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;ctrl-u&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="linux" scheme="http://example.com/tags/linux/"/>
+    
+  </entry>
   
   <entry>
     <title>Blog</title>

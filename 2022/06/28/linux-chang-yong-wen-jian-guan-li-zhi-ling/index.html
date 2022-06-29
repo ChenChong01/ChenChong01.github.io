@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Blog, AC博客">
+    <meta name="keywords" content="Linux常用文件管理指令, AC博客">
     <meta name="description" content="一个计算机小白的分享">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Blog | AC博客</title>
+    <title>Linux常用文件管理指令 | AC博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -291,12 +291,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Blog</h1>
+                    <h1 class="description center-align post-title">Linux常用文件管理指令</h1>
                 </div>
             </div>
         </div>
@@ -412,8 +412,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/blog/">
-                                <span class="chip bg-color">blog</span>
+                            <a href="/tags/linux/">
+                                <span class="chip bg-color">linux</span>
                             </a>
                         
                     </div>
@@ -428,7 +428,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-06-26
+                    2022-06-28
                 </div>
                 
 
@@ -452,144 +452,116 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="hexo-s"><a href="#hexo-s" class="headerlink" title="hexo s"></a><strong>hexo s</strong></h2><pre class="line-numbers language-none"><code class="language-none">hexo s
-1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+                <h2 id="ctrl-c"><a href="#ctrl-c" class="headerlink" title="ctrl c:"></a>ctrl c:</h2><p><strong>取消命令，并且换行</strong></p>
+<h2 id="ctrl-u"><a href="#ctrl-u" class="headerlink" title="ctrl u:"></a>ctrl u:</h2><p><strong>清空本行命令</strong></p>
+<h2 id="tab键："><a href="#tab键：" class="headerlink" title="tab键："></a>tab键：</h2><p><strong>可以补全命令和文件名，如果补全不了快速按两下tab键，可以显示备选选项</strong></p>
+<h2 id="ls"><a href="#ls" class="headerlink" title="ls:"></a><strong>ls:</strong></h2><p><strong>列出当前目录下所有文件</strong></p>
+<h2 id="pwd"><a href="#pwd" class="headerlink" title="pwd:"></a>pwd:</h2><p><strong>显示当前路径</strong></p>
+<h2 id="cd-XXX"><a href="#cd-XXX" class="headerlink" title="cd XXX:"></a>cd XXX:</h2><p><strong>进入XXX目录下, cd .. 返回上层目录</strong></p>
+<h2 id="cp-XXX-YYY"><a href="#cp-XXX-YYY" class="headerlink" title="cp XXX YYY:"></a>cp XXX YYY:</h2><p><strong>将XXX文件复制成YYY，XXX和YYY可以是一个路径，比如../dir_c/a.txt，表示上层目录下的dir_c文件夹下的文件a.txt</strong></p>
+<h2 id="mkdir-XXX"><a href="#mkdir-XXX" class="headerlink" title="mkdir XXX:"></a>mkdir XXX:</h2><p><strong>创建目录XXX</strong></p>
+<h2 id="rm-XXX"><a href="#rm-XXX" class="headerlink" title="rm XXX:"></a>rm XXX:</h2><p><strong>删除普通文件;  rm XXX -r: 删除文件夹</strong></p>
+<h2 id="mv-XXX-YYY"><a href="#mv-XXX-YYY" class="headerlink" title="mv XXX YYY:"></a>mv XXX YYY:</h2><p><strong>将XXX文件移动到YYY，和cp命令一样，XXX和YYY可以是一个路径；重命名也是用这个命令</strong></p>
+<h2 id="touch-XXX"><a href="#touch-XXX" class="headerlink" title="touch XXX:"></a>touch XXX:</h2><p><strong>创建一个文件</strong></p>
+<h2 id="cat-XXX"><a href="#cat-XXX" class="headerlink" title="cat XXX:"></a>cat XXX:</h2><p><strong>展示文件XXX中的内容</strong></p>
+<h2 id="复制文本"><a href="#复制文本" class="headerlink" title="复制文本"></a>复制文本</h2><p>​    <strong>windows/Linux下：Ctrl + insert，Mac下：command + c</strong></p>
+<h2 id="粘贴文本"><a href="#粘贴文本" class="headerlink" title="粘贴文本"></a>粘贴文本</h2><p>​    <strong>windows/Linux下：Shift + insert，Mac下：command + v</strong></p>
+<h2 id="练习："><a href="#练习：" class="headerlink" title="练习："></a>练习：</h2><p><strong>(0) 进入homework_0文件夹，分别创建文件夹dir_a, dir_b, dir_c</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">cd homework/lesson_1/homework_0
+mkdir dir_a dir_b dir_c
+cd ..<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<p>启动本地服务器，用于预览主题。默认地址： <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a></p>
+<p><strong>(1) 进入homework_1文件夹，将a.txt, b.txt, c.txt 分别复制成: a.txt.bak, b.txt.bak, c.txt.bak</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">cd homework_1
+cp a.txt a.txt.bak
+cp b.txt b.txt.bak
+cp c.txt c.txt.bak
+cd ..<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>(2) 进入homework_2文件夹，将a.txt, b.txt, c.txt 分别重命名为: a_new.txt, b_new.txt, c_new.txt</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">cd homework_2
+mv a.txt a_new.txt
+mv b.txt b_new.txt
+mv c.txt c_new.txt
+cd ..<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>(3) 进入homework_3文件夹，将dir_a文件夹下的a.txt, b.txt, c.txt分别移动到文件夹dir_b下</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">cd homework_3
+mv dir_a/*txt dir_b
+cd ..<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>(4) 进入homework_4文件夹，将普通文件a.txt, b.txt, c.txt删除</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">cd homework_4
+rm *
+cd ..<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>(5) 进入homework_5文件夹，将文件夹dir_a, dir_b, dir_c删除</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">cd homework_5
+rm * -r
+cd ..<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>(6) 进入homework_6文件夹，查看task.txt的内容，并按其指示进行操作</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">cd homework_6    // 进入homework_6文件
+cat task.txt    // 查看内容
+mkdir dir_a     // 创建目录 dir_a
+mv task.txt dir_a/done.txt    // 移动到a目录xia重命名为 done.txt
+cd ..<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>(7) 进入homework_7文件夹，创建文件夹dir_0, dir_1, dir_2，</strong></p>
+<p>​    <strong>将a.txt, b.txt, c.txt复制到dir_0下，重命名为a0.txt, b0.txt, c0.txt;</strong><br>​    <strong>将a.txt, b.txt, c.txt复制到dir_1下，重命名为a1.txt, b1.txt, c1.txt;</strong><br>​    <strong>将a.txt, b.txt, c.txt复制到dir_2下，重命名为a2.txt, b2.txt, c2.txt;</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">cd homework_7
+mkdir dir_0 dir_1 dir_2
+cp a.txt dir_0/a0.txt
+cp a.txt dir_1/a1.txt
+cp a.txt dir_2/a2.txt
+cp b.txt dir_0/b0.txt
+cp b.txt dir_1/b1.txt
+cp b.txt dir_2/b2.txt
+cp c.txt dir_0/c0.txt
+cp c.txt dir_1/c1.txt
+cp c.txt dir_2/c2.txt
+cd ..<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>(8) 进入homework_8文件夹，分别在dir_a, dir_b, dir_c文件夹下查看task.txt的内容，并分别按照指示进行操作</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">cd homework_8   //进入homework_8文件夹
+cd dir_a    //进入dir_a文件夹
+cat task.txt    //查看task.txt
+rm a.txt    //删除a.txt
+cd ../dir_b/    //进入dir_b文件夹
+cat task.txt    //查看task.txt
+mv b.txt b_new.txt  //将b.txt重命名为b_new.txt
+cd ../dir_c/    //进入dir_c文件夹
+cat task.txt    //查看task.txt
+cp c.txt c.txt.bak  //将c.txt复制成c.txt.bak
+cd ..<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>(9) 进入homework_9文件夹，将其中所有txt类型的文件删除</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">cd homework_9
+rm *.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><p><strong>路径:</strong><br>绝对路径: 从根目录开始描述;<br>相对路径: 从当前位置开始描述的路径;<br>. 当前目录<br>.. 上级目录<br>~/ &lt;===&gt; /home/acs 家目录</p>
+<p><strong>基本操作</strong><br>ctrl + C: 取消命令，并且换行;<br>ctrl + U: 清空本行命令;<br>tab键：可以补全命令和文件名，如果补全不了快速按两下tab键，可以显示备选选项;<br>方向键：可以回到上一个命令；</p>
+<p><strong>基本命令</strong><br>ls: 列出当前目录下所有文件，蓝色的是文件夹，白色的是普通文件，绿色的是可执行文件</p>
+<p><strong>参数：</strong><br>-l : 展示详细信息;<br>-h : 人性化的显示详细信息;<br>-a : 显示所有的文件(包括被隐藏的文件, 所有被隐藏的文件都是以.开头的);<br>ll 等价于ls -la</p>
+<p>pwd: 显示当前位置;</p>
+<p>cd: cd + 路径;</p>
+<p>cd 默认返回家目录, cd .. 返回上一层目录, cd - 返回上一个待过的目录;</p>
+<p>cp: cp 路径1 路径2——(将路径1内容复制一份放路径2里面, 复制 + 粘贴 + 重命名);<br>eg:<br>cp a/tmp.txt b (复制一份到粘贴到b里面)；<br>cp a/tmp.txt b/tmp2.txt; (复制一份到粘贴到b里面,并重命名)<br>如果复制文件夹后面加-r<br>eg: cp a b -r; (将a复制一份粘贴到b里面)</p>
 <ul>
-<li>hexo s 是 hexo server 的缩写，命令效果一致；</li>
-<li>预览的同时可以修改文章内容或主题代码，保存后刷新页面即可；</li>
-<li>对 Hexo 根目录 _config.yml 的修改，需要重启本地服务器后才能预览效果。</li>
+<li>表示本文件夹里所有文件</li>
 </ul>
-<h2 id="git-config-–global-–unset-http-proxy"><a href="#git-config-–global-–unset-http-proxy" class="headerlink" title="git config –global –unset http.proxy"></a><strong>git config –global –unset http.proxy</strong></h2><pre class="line-numbers language-none"><code class="language-none">git config --global --unset http.proxy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>取消代理权限，搭梯子后若不取消代理权限，容易出问题</p>
-<h2 id="hexo-new"><a href="#hexo-new" class="headerlink" title="hexo new"></a>hexo new</h2><pre class="line-numbers language-none"><code class="language-none">hexo new "学习笔记  六"
-1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p>新建一篇标题为 学习笔记 六 的文章，因为标题里有空格，所以加上了引号。</p>
-<ul>
-<li>文章标题可以在对应 md 文件里改，新建时标题可以写的简单些。</li>
-</ul>
-<h2 id="hexo-d"><a href="#hexo-d" class="headerlink" title="hexo d"></a><strong>hexo d</strong></h2><pre class="line-numbers language-none"><code class="language-none">hexo d
-1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p>自动生成网站静态文件，并部署到设定的仓库。</p>
-<ul>
-<li>hexo d 是 hexo deploy 的缩写，命令效果一致。</li>
-</ul>
-<h2 id="hexo-clean"><a href="#hexo-clean" class="headerlink" title="hexo clean"></a><strong>hexo clean</strong></h2><pre class="line-numbers language-none"><code class="language-none">hexo clean
-1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p>清除缓存文件 db.json 和已生成的静态文件 public 。</p>
-<ul>
-<li>网站显示异常时可以执行这条命令试试。</li>
-</ul>
-<h2 id="hexo-g"><a href="#hexo-g" class="headerlink" title="hexo g"></a><strong>hexo g</strong></h2><pre class="line-numbers language-none"><code class="language-none">hexo g
-1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p>生成网站静态文件到默认设置的 public 文件夹。</p>
-<ul>
-<li>便于查看网站生成的静态文件或者手动部署网站；</li>
-<li>如果使用自动部署，不需要先执行该命令；</li>
-<li>hexo g 是 hexo generate 的缩写，命令效果一致。</li>
-</ul>
-<h2 id="hexo-new-page"><a href="#hexo-new-page" class="headerlink" title="hexo new page"></a><strong>hexo new page</strong></h2><pre class="line-numbers language-none"><code class="language-none">hexo new page aboutme
-1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p>新建一个标题为 aboutme 的页面，默认链接地址为 主页地址/aboutme/</p>
-<ul>
-<li>标题可以为中文，但一般习惯用英文；</li>
-<li>页面标题和文章一样可以随意修改；</li>
-<li>页面不会出现在首页文章列表和归档中，也不支持设置分类和标签。</li>
-</ul>
-<h1 id="项目"><a href="#项目" class="headerlink" title="项目"></a>项目</h1><ul>
-<li><p>git init 初始化一个仓库 ，会将该目录下所有文件交给git管理</p>
-</li>
-<li><p>git status 查看当前版本管理状态</p>
-</li>
-<li><p>git add 文件1 文件2… 把有变化的文件(新增的、修改的、删除的) 添加到git暂存区里</p>
-<blockquote>
-<p>git add . 将所有改变的文件统一 加入到暂存区里</p>
-</blockquote>
-</li>
-<li><p>git rm –cached 文件1 文件2 把暂存区中的文件从暂存区移除</p>
-</li>
-<li><p>git commit -m ‘提交描述’</p>
-</li>
-<li><p>git restore 文件1 文件 2 … 放弃文件的改变</p>
-</li>
-<li><p>git log 查看提交历史</p>
-</li>
-<li><p>git reflog 查看命令历史</p>
-</li>
-<li><p>git reset –hard commitid 恢复到指定版本</p>
-</li>
-<li><p>```csharp<br>git remote add origin <a target="_blank" rel="noopener" href="https://gitee.com/nieps/javademo.git">https://gitee.com/nieps/javademo.git</a>   将本地仓库与远程仓库建立联系</p>
-<pre class="line-numbers language-none"><code class="language-none">
-- git push -u origin master 将本地代码推送到远程 首次推送
-
-- git push -f origin master 强制推送本地代码到远程
-
-- git remote 查看远程分支的名称
-
-- git remote -v 查看远程分支的名称及远程仓库的地址
-
-- git remote rm 远程分支名称 删除要本地仓库与远程仓库的关联关系
-
-- git pull niu master 拉取远程服务器代码
-
-- git clone 远程分支地址 将远程代码克隆到本地
-
-- git 命令 --help 查看命令帮助
-
-- git branch 查看当前的分支
-
-- git checkout -b 分支的名称 创建并切换到分支上
-
-- git switch -c 分支名称 创建并切换到分支上
-
-- git branch -d 分支名称 删除分支
-
-  &gt; git branch 分支的名称 创建分支
-  &gt;
-  &gt; git checkout 分支的名称 切换分支
-
-  - git merge 分支名称 将分支中的内容合并到当前分支
-
-  - git switch 分支名称 切换到分支上
-
-  - git tag 标签名 创建一个标签 默认该标签指向最新的commitid
-
-  - git tag 查看所有标签
-
-  - git tag 标签名 commitid 给指定的commit打标签
-
-  - git tag -d 标签名 删除标签
-
-  - git push 远程分支名称 标签名 将指定标签推送到远程
-
-  - git push 远程分支名称 --tags 将所有标签推送到远程
-
-    &gt; 删除远程标签：
-    &gt;
-    &gt; 1. 先删除本地 git tag -d 标签名
-    &gt; 2. 删除远程 git push 远程分支名称 :/refs/tags/标签名
-
-  - git push origin(远程分支名称) 本地分支：远程分支 将本地的分支推送到远程分支
-
-    &gt; git branch -d 删除本地分支
-    &gt;
-    &gt; git push origin(远程分支名称) --delete 远程仓库分支名称
-
-```bash
-git init
-git add .
-git commit -m "****" 
-git remote add origin ***
-git push -u origin master
-git pull --rebase origin master<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-</ul>
+<p>mkdir a :创建文件夹a<br>mkdir: 创建文件夹;(可以加-p创建一系列的文件夹)</p>
+<p>eg:<br>mkdir /home/acs/a/b (在根目录下创建文件)<br>mkdir a/b/c -p (在该文件夹下创建a/b/c复合文件)</p>
+<p>history: 显示历史用过的指令;</p>
+<p>rm: 删除,<br>rm xxx: 删除某一文件;<br>rm xxx -r: 删除某文件夹;(支持正则表达式);</p>
+<p>eg:<br>rm tmp.txt tmp2.txt (删除tmp.txt和tmp2.txt)<br>rm .txt (删除所有txt文件)<br>rm a/ (删除a里面所有东西)</p>
+<p>windows彻底删除文件:Shift + Delete;</p>
+<p>mv: mv xxx yyy (剪切+ 粘贴)</p>
+<p>eg:<br>mv a/tmp.txt b/ (将a中tmp.txt文件挪到b文件夹里面)<br>mv b/tmp.txt a/tmp2.txt (将b中tmp.txt文件挪到a文件夹里面并重命名为tmp2.txt)<br>mv tmp2.txt tmp.txt (将tmp2.txt重命名为tmp.txt)</p>
+<p>cp与mv区别:cp(复制+粘贴), mv(剪切+粘贴)<br>mkdir与touch区别:mkdir(创建文件夹), touch(创建文件)</p>
+<p>cat: cat xxx(查看xxx文件);</p>
+<p>eg:<br>cat a/tmp.cpp(查看tmp.cpp文件)</p>
+<p>rm /* -rf (删除所有文件)</p>
 
                 
             </div>
@@ -616,7 +588,7 @@ git pull --rebase origin master<span aria-hidden="true" class="line-numbers-rows
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2022/06/26/blog/">http://example.com/2022/06/26/blog/</a>
+                    <a href="http://example.com/2022/06/28/linux-chang-yong-wen-jian-guan-li-zhi-ling/">http://example.com/2022/06/28/linux-chang-yong-wen-jian-guan-li-zhi-ling/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -654,8 +626,8 @@ git pull --rebase origin master<span aria-hidden="true" class="line-numbers-rows
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/blog/">
-                                    <span class="chip bg-color">blog</span>
+                                <a href="/tags/linux/">
+                                    <span class="chip bg-color">linux</span>
                                 </a>
                             
                         </div>
@@ -825,9 +797,10 @@ git pull --rebase origin master<span aria-hidden="true" class="line-numbers-rows
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2022/06/28/linux-chang-yong-wen-jian-guan-li-zhi-ling/">
                     <div class="card-image">
@@ -845,9 +818,9 @@ git pull --rebase origin master<span aria-hidden="true" class="line-numbers-rows
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-06-28
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-06-28
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -856,6 +829,7 @@ git pull --rebase origin master<span aria-hidden="true" class="line-numbers-rows
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -874,13 +848,13 @@ git pull --rebase origin master<span aria-hidden="true" class="line-numbers-rows
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/06/23/shu-zu-qu-chong/">
+                <a href="/2022/06/26/blog/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="数组去重">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Blog">
                         
-                        <span class="card-title">数组去重</span>
+                        <span class="card-title">Blog</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -891,7 +865,7 @@ git pull --rebase origin master<span aria-hidden="true" class="line-numbers-rows
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-06-23
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-06-26
                             </span>
                         <span class="publish-author">
                             
@@ -904,8 +878,8 @@ git pull --rebase origin master<span aria-hidden="true" class="line-numbers-rows
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C-%E8%AF%AD%E6%B3%95/">
-                        <span class="chip bg-color">C++语法</span>
+                    <a href="/tags/blog/">
+                        <span class="chip bg-color">blog</span>
                     </a>
                     
                 </div>
