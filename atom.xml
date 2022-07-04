@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-06-29T14:08:36.869Z</updated>
+  <updated>2022-07-04T02:10:56.892Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>tmux和vim</title>
+    <link href="http://example.com/2022/07/04/tmux-he-vim/"/>
+    <id>http://example.com/2022/07/04/tmux-he-vim/</id>
+    <published>2022-07-04T02:02:07.000Z</published>
+    <updated>2022-07-04T02:10:56.892Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;一、tmux&quot;&gt;&lt;a href=&quot;#一、tmux&quot; class=&quot;headerlink&quot; title=&quot;一、tmux&quot;&gt;&lt;/a&gt;一、tmux&lt;/h2&gt;&lt;h4 id=&quot;功能：&quot;&gt;&lt;a href=&quot;#功能：&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="linux" scheme="http://example.com/tags/linux/"/>
+    
+  </entry>
   
   <entry>
     <title>Linux常用文件管理指令</title>
