@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-07-04T10:33:16.091Z</updated>
+  <updated>2022-07-06T09:42:31.230Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SSH常用指令</title>
+    <link href="http://example.com/2022/07/06/ssh-chang-yong-zhi-ling/"/>
+    <id>http://example.com/2022/07/06/ssh-chang-yong-zhi-ling/</id>
+    <published>2022-07-06T09:15:37.000Z</published>
+    <updated>2022-07-06T09:42:31.230Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;ssh登录&quot;&gt;&lt;a href=&quot;#ssh登录&quot; class=&quot;headerlink&quot; title=&quot;ssh登录&quot;&gt;&lt;/a&gt;ssh登录&lt;/h2&gt;&lt;h4 id=&quot;基本用法&quot;&gt;&lt;a href=&quot;#基本用法&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="linux" scheme="http://example.com/tags/linux/"/>
+    
+  </entry>
   
   <entry>
     <title>shell语法</title>
