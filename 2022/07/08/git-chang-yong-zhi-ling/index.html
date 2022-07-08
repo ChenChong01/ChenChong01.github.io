@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="背包问题1.0, AC博客">
+    <meta name="keywords" content="Git常用指令, AC博客">
     <meta name="description" content="一个计算机小白的分享">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>背包问题1.0 | AC博客</title>
+    <title>Git常用指令 | AC博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -269,12 +269,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">背包问题1.0</h1>
+                    <h1 class="description center-align post-title">Git常用指令</h1>
                 </div>
             </div>
         </div>
@@ -390,8 +390,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E8%83%8C%E5%8C%85%E4%B9%9D%E8%AE%B2/">
-                                <span class="chip bg-color">背包九讲</span>
+                            <a href="/tags/linux/">
+                                <span class="chip bg-color">linux</span>
                             </a>
                         
                     </div>
@@ -406,7 +406,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-04-22
+                    2022-07-08
                 </div>
                 
 
@@ -430,252 +430,121 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>0-1背包、完全背包、多重背包小结</p>
-<h3 id="1、0-1背包"><a href="#1、0-1背包" class="headerlink" title="1、0~1背包"></a>1、0~1背包</h3><p>0~1背包，每种物品最多只能用一次，且只有两种状态：选与不选</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">集合f<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span>含义：从前i件物品中选择，总体积（或价值）不超过j<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+                <h2 id="git基本概念"><a href="#git基本概念" class="headerlink" title="git基本概念"></a>git基本概念</h2><ul>
+<li>工作区：仓库的目录。工作区是独立于各个分支的。</li>
+<li>暂存区：数据暂时存放的区域，类似于工作区写入版本库前的缓存区。暂存区是独立于各个分支的。</li>
+<li>版本库：存放所有已经提交到本地仓库的代码版本</li>
+<li>版本结构：树结构，树中每个节点代表一个代码版本。</li>
+</ul>
+<h2 id="git常用命令"><a href="#git常用命令" class="headerlink" title="git常用命令"></a>git常用命令</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> config --global user.name xxx     <span class="token comment">##设置全局用户名，信息记录在~/.gitconfig文件中</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">题目链接 ：https://www.acwing.com/problem/content/2/<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<hr>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> config --global user.email xxx@xxx.com    <span class="token comment">##设置全局邮箱地址，信息记录在~/.gitconfig文件中</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><strong>二维</strong></p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include &lt;iostream&gt;
-#include &lt;cstring&gt;
-#include &lt;algorithm&gt;
+<hr>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> init      <span class="token comment">##将当前目录配置成git仓库，信息记录在隐藏的.git文件夹中</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-using namespace std;
+<hr>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> <span class="token function">add</span> XX    <span class="token comment">##将XX文件添加到暂存区</span>
+	<span class="token function">git</span> <span class="token function">add</span> <span class="token builtin class-name">.</span>    <span class="token comment">##将所有待加入暂存区的文件加入暂存区</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-const int N = 1010;
+<hr>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> <span class="token function">rm</span> --cached XX    <span class="token comment">##将文件从仓库索引目录中删掉</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-int n, m; //n件物品， 容量为m
-int v[N], w[N]; //体积，价值
-int f[N][N]; //状态
+<hr>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> commit -m 	<span class="token comment">##"给自己看的备注信息"：将暂存区的内容提交到当前分支</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-int main() {
-    cin &gt;&gt; n &gt;&gt; m;
-    
-    for(int i = 1; i &lt;= n; i++) cin &gt;&gt; v[i] &gt;&gt; w[i];
-    
-    //f[0][0] = 0;
-    for(int i = 1; i &lt;= n; i++)
-        for(int j = 0; j &lt;= m; j++) {
-            f[i][j] = f[i - 1][j]; //不含i
-            if(j &gt;= v[i]) f[i][j] = max(f[i][j], f[i - 1][j - v[i]] + w[i]); //含i
-        }
-    cout &lt;&lt; f[n][m] &lt;&lt; endl;
-    return 0;
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<hr>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> status	<span class="token comment">##查看仓库状态</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><strong>优化：一维</strong></p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">for(int i = 1; i &lt;= n; i++)
-        for(int j = 0; j &lt;= m; j++) {
-            f[i][j] = f[i - 1][j]; //不含i
-            if(j &gt;= v[i]) f[i][j] = max(f[i][j], f[i - 1][j - v[i]] + w[i]);
-        }
-//直接删去一维
-for(int i = 1; i &lt;= n; i++)
-        for(int j = 0; j &lt;= m; j++) {
-            f[j] = f[j]; //不含i
-            if(j &gt;= v[i]) f[j] = max(f[j], f[j - v[i]] + w[i]);
-            //因为j - v[i] &lt; j, 所以在遍历f[j]之前就已经遍历过f[j - v[i]], f[j - v[i]]相当于f[i][j - v[i]]，而我们想要的是f[i - 1][j - v[i]],故如此优化并不正确
-        }
-//正确优化
+<hr>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> <span class="token function">diff</span> XX		<span class="token comment">##查看XX文件相对于暂存区修改了哪些内容</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-for(int i = 1; i &lt;= n; i++)
-        for(int j = m; j &gt;= v[i]; j--) {
-            f[j] = max(f[j], f[j - v[i]] + w[i]); //含i
-            //j从大到小遍历，j &gt; j - v[i], 所以遍历f[j]时f[j - v[i]]并没有被遍历，仍相当于f[i - 1][j - v[i]]
-        }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<hr>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> log 	<span class="token comment">##查看当前分支的所有版本</span>
+	<span class="token function">git</span> log --pretty<span class="token operator">=</span>oneline    <span class="token comment">##一行显示</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<hr>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> reflog		<span class="token comment">##查看HEAD指针的移动历史（包括被回滚的版本）</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<hr>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> reset --hard HEAD^ 或 <span class="token function">git</span> reset --hard HEAD~		<span class="token comment">##将代码库回滚到上一个版本</span>
+	<span class="token function">git</span> reset --hard HEAD^^		<span class="token comment">##往上回滚两次，以此类推</span>
+	<span class="token function">git</span> reset --hard HEAD~100	<span class="token comment">##往上回滚100个版本</span>
+	<span class="token function">git</span> reset --hard 版本号	<span class="token comment">##回滚到某一特定版本</span>
+<span class="token function">git</span> restore --stage branch_name	 <span class="token comment">##将暂存区的branch_name	文件从暂存区撤出，但不会更改文件内容</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<hr>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> checkout — XX或git restore XX		<span class="token comment">##将XX文件尚未加入暂存区的修改全部撤销</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<hr>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> remote <span class="token function">add</span> origin git@git.acwing.com:xxx/XXX.git	<span class="token comment">##将本地仓库关联到远程仓库</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<hr>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> push -u 	<span class="token comment">##(第一次需要-u以后不需要)：将当前分支推送到远程仓库</span>
+	<span class="token function">git</span> push origin branch_name		<span class="token comment">##将本地的某个分支推送到远程仓库</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<hr>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> clone git@git.acwing.com:xxx/XXX.git		<span class="token comment">##将远程仓库XXX下载到当前目录下</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<hr>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> checkout -b branch_name		<span class="token comment">##创建并切换到branch_name这个分支</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<hr>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> branch		<span class="token comment">##查看所有分支和当前所处分支</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<hr>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> checkout branch_name		<span class="token comment">##切换到branch_name这个分支</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<hr>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> merge branch_name		<span class="token comment">##将分支branch_name合并到当前分支上</span>
+<span class="token function">git</span> merge branch_name --no-ff  <span class="token comment">##可以保存之前的分支历史。能够更好的查看 merge历史以及branch 状态。</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<hr>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> branch -d branch_name		<span class="token comment">##删除本地仓库的branch_name分支</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<hr>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> branch branch_name		<span class="token comment">##创建新分支</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<hr>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> push --set-upstream origin branch_name
+	<span class="token comment">##设置本地的branch_name分支对应远程仓库的branch_name分支</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<hr>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> push -d origin branch_name		<span class="token comment">##删除远程仓库的branch_name分支</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<hr>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> pull		<span class="token comment">##将远程仓库的当前分支与本地仓库的当前分支合并</span>
+	<span class="token function">git</span> pull origin branch_name		<span class="token comment">##将远程仓库的branch_name分支与本地仓库的当前分支合并</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<hr>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> branch --set-upstream-to<span class="token operator">=</span>origin/branch_name1 branch_name2
+	<span class="token comment">##将远程的branch_name1分支与本地的branch_name2分支对应</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<hr>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> checkout -t origin/branch_name 		<span class="token comment">##将远程的branch_name分支拉取到本地</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<hr>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> stash		<span class="token comment">##将工作区和暂存区中尚未提交的修改存入栈中</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<hr>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> stash apply		<span class="token comment">##将栈顶存储的修改恢复到当前分支，但不删除栈顶元素</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<hr>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> stash drop		<span class="token comment">##删除栈顶存储的修改</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<hr>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> stash pop		<span class="token comment">##将栈顶存储的修改恢复到当前分支，同时删除栈顶元素</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<hr>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> stash list		<span class="token comment">##查看栈中所有元素</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">ag string  <span class="token comment">##查找当前目录的所有的字符串string</span>
+tree lesson_3/  <span class="token comment">##目录lesson_3下的文件结构</span>
+tree <span class="token builtin class-name">.</span>    <span class="token comment">##所有文件目录</span>
+<span class="token builtin class-name">logout</span>    <span class="token comment">##退出myserver云服务器</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 
-
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include &lt;iostream&gt;
-#include &lt;cstring&gt;
-#include &lt;algorithm&gt;
-
-using namespace std;
-
-const int N = 1010;
-
-int n, m; //n件物品， 容量为m
-int v[N], w[N]; //体积，价值
-int f[N]; //状态
-
-int main() {
-    cin &gt;&gt; n &gt;&gt; m;
-    
-    for(int i = 1; i &lt;= n; i++) cin &gt;&gt; v[i] &gt;&gt; w[i];
-    
-   
-    for(int i = 1; i &lt;= n; i++)
-        for(int j = m; j &gt;= v[i]; j--) {
-            f[j] = max(f[j], f[j - v[i]] + w[i]); //含i
-        }
-    cout &lt;&lt; f[m] &lt;&lt; endl;
-    return 0;
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="2、完全背包"><a href="#2、完全背包" class="headerlink" title="2、完全背包"></a>2、完全背包</h3><p>完全背包问题，每件物品可以无限选择</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">集合f<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span>含义：从前i件物品中选择，总体积（或价值）不超过j<span class="token punctuation">(</span>注意：每件物品可无限制选择<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">题目链接 ： https://www.acwing.com/problem/content/3/<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p><strong>二维</strong></p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include &lt;iostream&gt;
-#include &lt;cstring&gt;
-#include &lt;algorithm&gt;
-
-using namespace std;
-
-const int N = 1010;
-
-int n, m;
-int v[N], w[N];
-int f[N][N];
-
-int main() {
-    cin &gt;&gt; n &gt;&gt; m;
-    for(int i = 1; i &lt;= n; i++) cin &gt;&gt; v[i] &gt;&gt; w[i];
-    
-    for(int i = 1; i &lt;= n; i++)
-        for(int j = 0; j &lt;= m; j++) 
-            for(int k = 0; k * v[i] &lt;= j; k++)
-                f[i][j] = max(f[i][j], f[i - 1][j - v[i] * k] + w[i] * k);
-    
-    cout &lt;&lt; f[n][m] &lt;&lt; endl;
-    return 0;
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><strong>优化二维</strong></p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include &lt;iostream&gt;
-#include &lt;cstring&gt;
-#include &lt;algorithm&gt;
-
-using namespace std;
-
-const int N = 1010;
-
-int n, m;
-int v[N], w[N];
-int f[N][N];
-
-int main() {
-    cin &gt;&gt; n &gt;&gt; m;
-    for(int i = 1; i &lt;= n; i++) cin &gt;&gt; v[i] &gt;&gt; w[i];
-    
-    for(int i = 1; i &lt;= n; i++)
-        for(int j = 0; j &lt;= m; j++) {
-            f[i][j] = f[i - 1][j];
-            if(j &gt;= v[i]) f[i][j] = max(f[i][j], f[i][j - v[i]] + w[i]);
-        }
-    
-    cout &lt;&lt; f[n][m] &lt;&lt; endl;
-    return 0;
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><strong>优化一维</strong></p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include &lt;iostream&gt;
-#include &lt;cstring&gt;
-#include &lt;algorithm&gt;
-
-using namespace std;
-
-const int N = 1010;
-
-int n, m;
-int v[N], w[N];
-int f[N];
-
-int main() {
-    cin &gt;&gt; n &gt;&gt; m;
-    for(int i = 1; i &lt;= n; i++) cin &gt;&gt; v[i] &gt;&gt; w[i];
-    
-    for(int i = 1; i &lt;= n; i++)
-        for(int j = v[i]; j &lt;= m; j++) {
-            f[j] = max(f[j], f[j - v[i]] + w[i]);
-        }
-    
-    cout &lt;&lt; f[m] &lt;&lt; endl;
-    return 0;
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="3、多重背包问题"><a href="#3、多重背包问题" class="headerlink" title="3、多重背包问题"></a>3、多重背包问题</h3><p>多重背包问题，可以理解成完全背包的进阶版，每种物品不再像完全背包问题一样可无限选择，而是最多选择s（s是有限的）件</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">集合f<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span>含义：从前i件物品中选择，总体积（或价值）不超过j<span class="token punctuation">(</span>注意：每件物品最多选择s件<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p><strong>暴力</strong></p>
-<pre class="line-numbers language-none"><code class="language-none">题目链接 ：https://www.acwing.com/problem/content/4/<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include &lt;iostream&gt;
-#include &lt;cstring&gt;
-#include &lt;algorithm&gt;
-
-using namespace std;
-
-const int N = 110;
-
-int n, m;
-int v[N], w[N], s[N];
-int f[N][N];
-
-int main() {
-    cin &gt;&gt; n &gt;&gt; m;
-    
-    for(int i = 1; i &lt;= n; i++) cin &gt;&gt; v[i] &gt;&gt; w[i] &gt;&gt; s[i];
-    
-    for(int i = 1; i &lt;= n; i++)
-        for(int j = 0; j &lt;= m; j++) 
-            for(int k = 0; k &lt;= s[i] &amp;&amp; k * v[i] &lt;= j; k++)
-                f[i][j] = max(f[i][j], f[i - 1][j - v[i] * k] + w[i] * k);
-                
-    cout &lt;&lt; f[n][m] &lt;&lt; endl;
-    return 0;
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><strong>优化</strong></p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">题目链接 ： https://www.acwing.com/problem/content/5/<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include &lt;iostream&gt;
-#include &lt;cstring&gt;
-#include &lt;algorithm&gt;
-
-using namespace std;
-
-const int N = 25000, M = 2010;
-
-int n, m;
-int v[N], w[N];
-int f[N];
-
-int main() {
-    cin &gt;&gt; n &gt;&gt; m;
-    
-    int cnt = 0;
-    for(int i = 1; i &lt;= n; i++) {
-        int a, b, s;
-        cin &gt;&gt; a &gt;&gt; b &gt;&gt; s;
-        int k = 1;
-        while(k &lt;= s) {
-            cnt ++;
-            v[cnt] = a * k;
-            w[cnt] = b * k;
-            s -= k;
-            k *= 2;
-        } 
-        if(s &gt; 0) {
-            cnt ++;
-            v[cnt] = a * s;
-            w[cnt] = b * s;
-        }
-    }
-    
-    n = cnt;
-    
-    for(int i = 1; i &lt;= n; i++)
-        for(int j = m; j &gt;= v[i]; j--)
-            f[j] = max(f[j], f[j - v[i]] + w[i]);
-                
-    cout &lt;&lt; f[m] &lt;&lt; endl;
-    
-    return 0;
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -701,7 +570,7 @@ int main() {
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2022/04/22/bei-bao-wen-ti-1-0/">http://example.com/2022/04/22/bei-bao-wen-ti-1-0/</a>
+                    <a href="http://example.com/2022/07/08/git-chang-yong-zhi-ling/">http://example.com/2022/07/08/git-chang-yong-zhi-ling/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -739,8 +608,8 @@ int main() {
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E8%83%8C%E5%8C%85%E4%B9%9D%E8%AE%B2/">
-                                    <span class="chip bg-color">背包九讲</span>
+                                <a href="/tags/linux/">
+                                    <span class="chip bg-color">linux</span>
                                 </a>
                             
                         </div>
@@ -910,17 +779,18 @@ int main() {
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/04/25/er-wei-fei-yong-de-bei-bao-wen-ti/">
+                <a href="/2022/07/08/git-chang-yong-zhi-ling/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="二维费用的背包问题">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="Git常用指令">
                         
-                        <span class="card-title">二维费用的背包问题</span>
+                        <span class="card-title">Git常用指令</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -930,9 +800,9 @@ int main() {
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-04-25
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-08
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -941,11 +811,12 @@ int main() {
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%83%8C%E5%8C%85%E4%B9%9D%E8%AE%B2/">
-                        <span class="chip bg-color">背包九讲</span>
+                    <a href="/tags/linux/">
+                        <span class="chip bg-color">linux</span>
                     </a>
                     
                 </div>
@@ -959,13 +830,13 @@ int main() {
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/04/21/stl-xiao-jie/">
+                <a href="/2022/07/06/ssh-chang-yong-zhi-ling/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="STL小结">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="SSH常用指令">
                         
-                        <span class="card-title">STL小结</span>
+                        <span class="card-title">SSH常用指令</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -976,7 +847,7 @@ int main() {
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-21
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-06
                             </span>
                         <span class="publish-author">
                             
@@ -989,8 +860,8 @@ int main() {
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C-%E8%AF%AD%E6%B3%95/">
-                        <span class="chip bg-color">C++语法</span>
+                    <a href="/tags/linux/">
+                        <span class="chip bg-color">linux</span>
                     </a>
                     
                 </div>
