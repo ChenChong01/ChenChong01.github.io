@@ -4,6 +4,63 @@
   
     
     <entry>
+      <title>常用命令02</title>
+      <link href="/2022/07/17/chang-yong-ming-ling-02/"/>
+      <url>/2022/07/17/chang-yong-ming-ling-02/</url>
+      
+        <content type="html"><![CDATA[<p>Linux命令非常多，本节讲解几个常用命令。其他命令依赖于大家根据实际操作环境，边用边查。</p><h2 id="系统状况"><a href="#系统状况" class="headerlink" title="系统状况"></a>系统状况</h2><p>1.top：查看所有进程的信息（Linux的任务管理器）</p><ul><li>打开后，输入M：按使用内存排序</li><li>打开后，输入P：按使用CPU排序</li><li>打开后，输入q：退出</li></ul><p>2.df -h：查看硬盘使用情况<br>3.free -h：查看内存使用情况<br>4.du -sh：查看当前目录占用的硬盘空间<br>5.ps aux：查看所有进程<br>6.kill -9 pid：杀死编号为pid的进程</p><ul><li>传递某个具体的信号：kill -s SIGTERM pid</li></ul><p>7.netstat -nt：查看所有网络连接<br>8.w：列出当前登陆的用户<br>9.ping <a href="http://www.baidu.com：检查是否连网">www.baidu.com：检查是否连网</a></p><h2 id="文件权限"><a href="#文件权限" class="headerlink" title="文件权限"></a>文件权限</h2><p>1.chmod：修改文件权限</p><ul><li>chmod +x xxx：给xxx添加可执行权限</li><li>chmod -x xxx：去掉xxx的可执行权限</li><li>chmod 777 xxx：将xxx的权限改成777</li><li>chmod 777 xxx -R：递归修改整个文件夹的权限</li></ul><h2 id="文件检索"><a href="#文件检索" class="headerlink" title="文件检索"></a>文件检索</h2><p>1.find /path/to/directory/ -name ‘<em>.py’：搜索某个文件路径下的所有</em>.py文件<br>2.grep xxx：从stdin中读入若干行数据，如果某行中包含xxx，则输出该行；否则忽略该行。<br>3.wc：统计行数、单词数、字节数</p><ul><li>既可以从stdin中直接读入内容；也可以在命令行参数中传入文件名列表；</li><li>wc -l：统计行数</li><li>wc -w：统计单词数</li><li>wc -c：统计字节数</li></ul><p>4.tree：展示当前目录的文件结构</p><ul><li>tree /path/to/directory/：展示某个目录的文件结构</li><li>tree -a：展示隐藏文件</li></ul><p>5.ag xxx：搜索当前目录下的所有文件，检索xxx字符串<br>6.cut：分割一行内容</p><ul><li>从stdin中读入多行数据</li><li>echo $PATH | cut -d ‘:’ -f 3,5：输出PATH用:分割后第3、5列数据</li><li>echo $PATH | cut -d ‘:’ -f 3-5：输出PATH用:分割后第3-5列数据</li><li>echo $PATH | cut -c 3,5：输出PATH的第3、5个字符</li><li>echo $PATH | cut -c 3-5：输出PATH的第3-5个字符</li></ul><p>7.sort：将每行内容按字典序排序</p><ul><li>可以从stdin中读取多行数据</li><li>可以从命令行参数中读取文件名列表</li></ul><p>8.xargs：将stdin中的数据用空格或回车分割成命令行参数</p><ul><li>find . -name ‘*.py’ | xargs cat | wc -l：统计当前目录下所有python文件的总行数</li></ul><h2 id="查看文件内容"><a href="#查看文件内容" class="headerlink" title="查看文件内容"></a>查看文件内容</h2><p>1.more：浏览文件内容</p><ul><li>回车：下一行</li><li>空格：下一页</li><li>b：上一页</li><li>q：退出</li></ul><p>2.less：与more类似，功能更全</p><ul><li>回车：下一行</li><li>y：上一行</li><li>Page Down：下一页</li><li>Page Up：上一页</li><li>q：退出</li></ul><p>3.head -3 xxx：展示xxx的前3行内容</p><ul><li>同时支持从stdin读入内容</li></ul><p>4.tail -3 xxx：展示xxx末尾3行内容</p><ul><li>同时支持从stdin读入内容</li></ul><h2 id="用户相关"><a href="#用户相关" class="headerlink" title="用户相关"></a>用户相关</h2><p>1.history：展示当前用户的历史操作。内容存放在~/.bash_history中</p><h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p>1.md5sum：计算md5哈希值</p><ul><li>可以从stdin读入内容</li><li>也可以在命令行参数中传入文件名列表；</li></ul><p>2.time command：统计command命令的执行时间<br>3.ipython3：交互式python3环境。可以当做计算器，或者批量管理文件。</p><ul><li>! echo “Hello World”：!表示执行shell脚本</li></ul><p>4.watch -n 0.1 command：每0.1秒执行一次command命令<br>5.tar：压缩文件</p><ul><li>tar -zcvf xxx.tar.gz /path/to/file/*：压缩</li><li>tar -zxvf xxx.tar.gz：解压缩</li></ul><p>6.diff xxx yyy：查找文件xxx与yyy的不同点</p><h2 id="安装软件"><a href="#安装软件" class="headerlink" title="安装软件"></a>安装软件</h2><p>1.sudo command：以root身份执行command命令<br>2.apt-get install xxx：安装软件<br>3.pip install xxx –user –upgrade：安装python包</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>环境变量</title>
+      <link href="/2022/07/17/huan-jing-bian-liang/"/>
+      <url>/2022/07/17/huan-jing-bian-liang/</url>
+      
+        <content type="html"><![CDATA[<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>Linux系统中会用很多环境变量来记录配置信息。<br>环境变量类似于全局变量，可以被各个进程访问到。我们可以通过修改环境变量来方便地修改系统配置。</p><h2 id="查看"><a href="#查看" class="headerlink" title="查看"></a>查看</h2><p>列出当前环境下的所有环境变量：</p><pre class="line-numbers language-none"><code class="language-none">env  # 显示当前用户的变量set  # 显示当前shell的变量，包括当前用户的变量;export  # 显示当前导出成用户变量的shell变量<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>输出某个环境变量的值：</p><pre class="line-numbers language-none"><code class="language-none">echo $PATH<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h2 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h2><p>环境变量的定义、修改、删除操作可以参考shell语法</p><p>[<a href="https://chenchong01.github.io/2022/07/04/shell-yu-fa/]">https://chenchong01.github.io/2022/07/04/shell-yu-fa/]</a>: </p><p>的内容。</p><p>为了将对环境变量的修改应用到未来所有环境下，可以将修改命令放到<del>/.bashrc文件中。<br>修改完</del>/.bashrc文件后，记得执行source ~/.bashrc，来将修改应用到当前的bash环境下。</p><p>为何将修改命令放到~/.bashrc，就可以确保修改会影响未来所有的环境呢？</p><ul><li>每次启动bash，都会先执行~/.bashrc。</li><li>每次ssh登陆远程服务器，都会启动一个bash命令行给我们。</li><li>每次tmux新开一个pane，都会启动一个bash命令行给我们。</li><li>所以未来所有新开的环境都会加载我们修改的内容。</li></ul><h2 id="常见环境变量"><a href="#常见环境变量" class="headerlink" title="常见环境变量"></a>常见环境变量</h2><ul><li><strong>HOME</strong>：用户的家目录。</li><li><strong>PATH</strong>：可执行文件（命令）的存储路径。路径与路径之间用:分隔。当某个可执行文件同时出现在多个路径中时，会选择从左到右数第一个路径中的执行。下列所有存储路径的环境变量，均采用从左到右的优先顺序。</li><li><strong>LD_LIBRARY_PATH</strong>：用于指定动态链接库(.so文件)的路径，其内容是以冒号分隔的路径列表。</li><li><strong>C_INCLUDE_PATH</strong>：C语言的头文件路径，内容是以冒号分隔的路径列表。</li><li><strong>CPLUS_INCLUDE_PATH</strong>：CPP的头文件路径，内容是以冒号分隔的路径列表。</li><li><strong>PYTHONPATH</strong>：Python导入包的路径，内容是以冒号分隔的路径列表。</li><li><strong>JAVA_HOME</strong>：jdk的安装目录。</li><li><strong>CLASSPATH</strong>：存放Java导入类的路径，内容是以冒号分隔的路径列表。</li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>管道</title>
+      <link href="/2022/07/17/guan-dao/"/>
+      <url>/2022/07/17/guan-dao/</url>
+      
+        <content type="html"><![CDATA[<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>管道类似于文件重定向，可以将前一个命令的<strong>stdout</strong>重定向到下一个命令的<strong>stdin</strong>。</p><h2 id="要点"><a href="#要点" class="headerlink" title="要点"></a>要点</h2><p>管道命令仅处理<strong>stdout</strong>，会忽略<strong>stderr</strong>。<br>管道右边的命令必须能接受stdin。<br>多个管道命令可以串联。<br>与文件重定向的区别<br>文件重定向左边为命令，右边为文件。<br>管道左右两边均为命令，左边有<strong>stdout</strong>，右边有<strong>stdin</strong>。</p><h2 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h2><p>统计当前目录下所有python文件的总行数，其中find、xargs、wc等命令可以参考常用命令这一节内容。</p><pre class="line-numbers language-none"><code class="language-none">find . -name '*.py' | xargs cat | wc -l<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Git常用指令</title>
       <link href="/2022/07/08/git-chang-yong-zhi-ling/"/>
       <url>/2022/07/08/git-chang-yong-zhi-ling/</url>

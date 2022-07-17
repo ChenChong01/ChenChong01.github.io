@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="vim常用命令, AC博客">
+    <meta name="keywords" content="常用命令02, AC博客">
     <meta name="description" content="一个计算机小白的分享">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>vim常用命令 | AC博客</title>
+    <title>常用命令02 | AC博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -269,12 +269,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">vim常用命令</h1>
+                    <h1 class="description center-align post-title">常用命令02</h1>
                 </div>
             </div>
         </div>
@@ -406,7 +406,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-05-05
+                    2022-07-17
                 </div>
                 
 
@@ -430,56 +430,94 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="1、简介"><a href="#1、简介" class="headerlink" title="1、简介"></a>1、简介</h4><p>　　vim是linux最常用的编辑器，必须要熟练掌握使用办法，方便以后快速修改配置文件。如果想学习linux，vim编辑器是必须会用的工具。</p>
-<p>　　vim有3种常用模式：一般模式、编辑模式、命令模式。</p>
-<h4 id="2、一般模式"><a href="#2、一般模式" class="headerlink" title="2、一般模式"></a>2、一般模式</h4><h5 id="（1）光标："><a href="#（1）光标：" class="headerlink" title="（1）光标："></a>（1）光标：</h5><p>　　上下左右:kjhl 也可以使用方向键</p>
-<p>　　n+上下左右:n为数字，向上下左右移动n个字符</p>
-<p>　　[ctrl]+f:屏幕向下滚动一页，同page down</p>
-<p>　　[ctrl]+b:屏幕向上滚动一页，同page up</p>
-<p>　　0或home:光标移动到行首</p>
-<p>　　$或end:光标移动到行尾</p>
-<p>　　G:光标移动到最后一行</p>
-<p>　　gg:同1g，光标移动到第一行行首</p>
-<p>　　ng:光标移动到第n行</p>
-<p>​    　u:恢复前一个操作</p>
-<p>　　[ctrl]+r:重做上一个操作</p>
-<h5 id="（2）查找替换："><a href="#（2）查找替换：" class="headerlink" title="（2）查找替换："></a>（2）查找替换：</h5><p>　　/word:向下查找关键词，使用n或N向上或向下查找关键词</p>
-<p>　　?word:向上查找关键词word，使用n或N向上或向下查找关键词</p>
-<p>​        ：noh  取消高亮</p>
-<p>　　:n1,n2s/word1/word2/g  :  s/1/2/g 表示将1替换成2，所以前面的意思是在n1到n2之间，将word1替换为word2.例如：51,100s/aaa/bbb/g</p>
-<p>　　:1,$s/word1/word2/g : 全文查找替换将word1替换为word2</p>
-<h5 id="（3）删除："><a href="#（3）删除：" class="headerlink" title="（3）删除："></a>（3）删除：</h5><p>　　x:向后删除</p>
-<p>　　X:向前删除</p>
-<p>　　nx:向后删除n个字符</p>
-<p>　　dd:删除当前行　</p>
-<p>　　ndd:向下删除n行</p>
-<p>　　d1G:删除当前位置到第一行</p>
-<h5 id="（4）复制，粘贴"><a href="#（4）复制，粘贴" class="headerlink" title="（4）复制，粘贴"></a>（4）复制，粘贴</h5><p>​        yy 复制当前行</p>
-<p>​        v   从光标当前位置开始，光标所经过的地方会被选中，再按一下v结束。 </p>
-<p>​        V   从光标当前行开始，光标经过的行都会被选中，再按一下Ｖ结束。 </p>
-<p>​        ggVG 选中全部的文本， 其中gg为跳到行首，V选中整行，G末尾</p>
-<p>​        选中后就可以用编辑命令对其进行编辑，如 </p>
-<p>​        y  复制 （默认是复制到”寄存器） </p>
-<p>​        p  粘贴 （默认从”寄存器取出内容粘贴） </p>
-<p>​        “+y   复制到系统剪贴板(也就是vim的+寄存器） </p>
-<p>​        “+p  从系统剪贴板粘贴 </p>
-<h4 id="3、一般模式切换到编辑模式"><a href="#3、一般模式切换到编辑模式" class="headerlink" title="3、一般模式切换到编辑模式"></a>3、一般模式切换到编辑模式</h4><p>　　i:进入插入模式，在光标前插入  I是在第一个非空格符处插入</p>
-<p>　　a:进入插入模式，在光标下一个字符插入 A是在所在行最后一个字符插入</p>
-<p>　　o:进入插入模式，在下面一行插入  O是在上面一行出入</p>
-<p>　　r:进入替换模式，类似于insert键</p>
-<h4 id="4、一般模式到命令模式"><a href="#4、一般模式到命令模式" class="headerlink" title="4、一般模式到命令模式"></a>4、一般模式到命令模式</h4><p>　　:w 保存</p>
-<p>　　:w! 强制保存</p>
-<p>　　:q 退出</p>
-<p>　　:q! 强制退出</p>
-<p>　　:wq :x 保存并退出</p>
-<p>　　ZZ 保存并退出</p>
-<p>　　:set number 显示行号</p>
-<p>　　:set nonu 取消显示行号</p>
-<p>　　</p>
-<h4 id="5、多文件编辑"><a href="#5、多文件编辑" class="headerlink" title="5、多文件编辑"></a>5、多文件编辑</h4><p>　　vim file1 file2可以同时打开两个文件</p>
-<p>　　:n 编辑下一个文件</p>
-<p>　　:N 编辑上一个文件</p>
-<p>　　:file 列出这个vim打开的所有文件 </p>
+                <p>Linux命令非常多，本节讲解几个常用命令。其他命令依赖于大家根据实际操作环境，边用边查。</p>
+<h2 id="系统状况"><a href="#系统状况" class="headerlink" title="系统状况"></a>系统状况</h2><p>1.top：查看所有进程的信息（Linux的任务管理器）</p>
+<ul>
+<li>打开后，输入M：按使用内存排序</li>
+<li>打开后，输入P：按使用CPU排序</li>
+<li>打开后，输入q：退出</li>
+</ul>
+<p>2.df -h：查看硬盘使用情况<br>3.free -h：查看内存使用情况<br>4.du -sh：查看当前目录占用的硬盘空间<br>5.ps aux：查看所有进程<br>6.kill -9 pid：杀死编号为pid的进程</p>
+<ul>
+<li>传递某个具体的信号：kill -s SIGTERM pid</li>
+</ul>
+<p>7.netstat -nt：查看所有网络连接<br>8.w：列出当前登陆的用户<br>9.ping <a href="http://www.baidu.com：检查是否连网">www.baidu.com：检查是否连网</a></p>
+<h2 id="文件权限"><a href="#文件权限" class="headerlink" title="文件权限"></a>文件权限</h2><p>1.chmod：修改文件权限</p>
+<ul>
+<li>chmod +x xxx：给xxx添加可执行权限</li>
+<li>chmod -x xxx：去掉xxx的可执行权限</li>
+<li>chmod 777 xxx：将xxx的权限改成777</li>
+<li>chmod 777 xxx -R：递归修改整个文件夹的权限</li>
+</ul>
+<h2 id="文件检索"><a href="#文件检索" class="headerlink" title="文件检索"></a>文件检索</h2><p>1.find /path/to/directory/ -name ‘<em>.py’：搜索某个文件路径下的所有</em>.py文件<br>2.grep xxx：从stdin中读入若干行数据，如果某行中包含xxx，则输出该行；否则忽略该行。<br>3.wc：统计行数、单词数、字节数</p>
+<ul>
+<li>既可以从stdin中直接读入内容；也可以在命令行参数中传入文件名列表；</li>
+<li>wc -l：统计行数</li>
+<li>wc -w：统计单词数</li>
+<li>wc -c：统计字节数</li>
+</ul>
+<p>4.tree：展示当前目录的文件结构</p>
+<ul>
+<li>tree /path/to/directory/：展示某个目录的文件结构</li>
+<li>tree -a：展示隐藏文件</li>
+</ul>
+<p>5.ag xxx：搜索当前目录下的所有文件，检索xxx字符串<br>6.cut：分割一行内容</p>
+<ul>
+<li>从stdin中读入多行数据</li>
+<li>echo $PATH | cut -d ‘:’ -f 3,5：输出PATH用:分割后第3、5列数据</li>
+<li>echo $PATH | cut -d ‘:’ -f 3-5：输出PATH用:分割后第3-5列数据</li>
+<li>echo $PATH | cut -c 3,5：输出PATH的第3、5个字符</li>
+<li>echo $PATH | cut -c 3-5：输出PATH的第3-5个字符</li>
+</ul>
+<p>7.sort：将每行内容按字典序排序</p>
+<ul>
+<li>可以从stdin中读取多行数据</li>
+<li>可以从命令行参数中读取文件名列表</li>
+</ul>
+<p>8.xargs：将stdin中的数据用空格或回车分割成命令行参数</p>
+<ul>
+<li>find . -name ‘*.py’ | xargs cat | wc -l：统计当前目录下所有python文件的总行数</li>
+</ul>
+<h2 id="查看文件内容"><a href="#查看文件内容" class="headerlink" title="查看文件内容"></a>查看文件内容</h2><p>1.more：浏览文件内容</p>
+<ul>
+<li>回车：下一行</li>
+<li>空格：下一页</li>
+<li>b：上一页</li>
+<li>q：退出</li>
+</ul>
+<p>2.less：与more类似，功能更全</p>
+<ul>
+<li>回车：下一行</li>
+<li>y：上一行</li>
+<li>Page Down：下一页</li>
+<li>Page Up：上一页</li>
+<li>q：退出</li>
+</ul>
+<p>3.head -3 xxx：展示xxx的前3行内容</p>
+<ul>
+<li>同时支持从stdin读入内容</li>
+</ul>
+<p>4.tail -3 xxx：展示xxx末尾3行内容</p>
+<ul>
+<li>同时支持从stdin读入内容</li>
+</ul>
+<h2 id="用户相关"><a href="#用户相关" class="headerlink" title="用户相关"></a>用户相关</h2><p>1.history：展示当前用户的历史操作。内容存放在~/.bash_history中</p>
+<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p>1.md5sum：计算md5哈希值</p>
+<ul>
+<li>可以从stdin读入内容</li>
+<li>也可以在命令行参数中传入文件名列表；</li>
+</ul>
+<p>2.time command：统计command命令的执行时间<br>3.ipython3：交互式python3环境。可以当做计算器，或者批量管理文件。</p>
+<ul>
+<li>! echo “Hello World”：!表示执行shell脚本</li>
+</ul>
+<p>4.watch -n 0.1 command：每0.1秒执行一次command命令<br>5.tar：压缩文件</p>
+<ul>
+<li>tar -zcvf xxx.tar.gz /path/to/file/*：压缩</li>
+<li>tar -zxvf xxx.tar.gz：解压缩</li>
+</ul>
+<p>6.diff xxx yyy：查找文件xxx与yyy的不同点</p>
+<h2 id="安装软件"><a href="#安装软件" class="headerlink" title="安装软件"></a>安装软件</h2><p>1.sudo command：以root身份执行command命令<br>2.apt-get install xxx：安装软件<br>3.pip install xxx –user –upgrade：安装python包</p>
 
                 
             </div>
@@ -506,7 +544,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2022/05/05/vim-chang-yong-ming-ling/">http://example.com/2022/05/05/vim-chang-yong-ming-ling/</a>
+                    <a href="http://example.com/2022/07/17/chang-yong-ming-ling-02/">http://example.com/2022/07/17/chang-yong-ming-ling-02/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -715,17 +753,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/05/05/zi-fu-chuan-pi-pei/">
+                <a href="/2022/07/17/chang-yong-ming-ling-02/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="字符串匹配">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="常用命令02">
                         
-                        <span class="card-title">字符串匹配</span>
+                        <span class="card-title">常用命令02</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -735,9 +774,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-05-05
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-17
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -746,11 +785,12 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D/">
-                        <span class="chip bg-color">字符串匹配</span>
+                    <a href="/tags/linux/">
+                        <span class="chip bg-color">linux</span>
                     </a>
                     
                 </div>
@@ -764,13 +804,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/04/25/er-wei-fei-yong-de-bei-bao-wen-ti/">
+                <a href="/2022/07/17/huan-jing-bian-liang/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="二维费用的背包问题">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="环境变量">
                         
-                        <span class="card-title">二维费用的背包问题</span>
+                        <span class="card-title">环境变量</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -781,7 +821,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-25
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-17
                             </span>
                         <span class="publish-author">
                             
@@ -794,8 +834,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%83%8C%E5%8C%85%E4%B9%9D%E8%AE%B2/">
-                        <span class="chip bg-color">背包九讲</span>
+                    <a href="/tags/linux/">
+                        <span class="chip bg-color">linux</span>
                     </a>
                     
                 </div>
