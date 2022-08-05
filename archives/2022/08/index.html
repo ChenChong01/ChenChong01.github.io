@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="归档: 2022/6, AC博客">
+    <meta name="keywords" content="归档: 2022/8, AC博客">
     <meta name="description" content="一个计算机小白的分享">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>归档: 2022/6 | AC博客</title>
+    <title>归档: 2022/8 | AC博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -413,40 +413,43 @@
             
             
             <div class="cd-timeline-img month" data-aos="zoom-in-up">
-                <a href="/archives/2022/06">06</a>
+                <a href="/archives/2022/08">08</a>
             </div>
             
 
             
             <div class="cd-timeline-img day" data-aos="zoom-in-up">
-                <span>28</span>
+                <span>05</span>
             </div>
             <article class="cd-timeline-content" data-aos="fade-up">
                 <div class="article col s12 m6">
                     <div class="card">
-                        <a href="/2022/06/28/linux-chang-yong-wen-jian-guan-li-zhi-ling/">
+                        <a href="/2022/08/05/sheng-cheng-django-ye-mian-bing-bei-fen-xiang-mu/">
                             <div class="card-image">
                                 
                                 
-                                <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Linux常用文件管理指令">
+                                <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="生成Django页面并备份项目">
                                 
-                                <span class="card-title">Linux常用文件管理指令</span>
+                                <span class="card-title">生成Django页面并备份项目</span>
                             </div>
                         </a>
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    ctrl c:取消命令，并且换行
-ctrl u:清空本行命令
-tab键：可以补全命令和文件名，如果补全不了快速按两下tab键，可以显示备选选项
-ls:列出当前目录下所有文件
-pwd:显示当前路径
-cd XXX:进入XXX目录下, cd ..
+                                    1.打开tmux
+2.创建django项目acapp
+django-admin startproject acapp
+
+
+3.配置git:
+ssh-keygen # 生成密钥用于连接到ac git上面
+cd .ssh/
+cat id_rsa
                                 
                             </div>
                             <div class="publish-info">
                                 <span class="publish-date">
-                                    <i class="far fa-clock fa-fw icon-date"></i>2022-06-28
+                                    <i class="far fa-clock fa-fw icon-date"></i>2022-08-05
                                 </span>
                                 <span class="publish-author">
                                     
@@ -460,189 +463,7 @@ cd XXX:进入XXX目录下, cd ..
                         
                         <div class="card-action article-tags">
                             
-                            <a href="/tags/linux/"><span class="chip bg-color">linux</span></a>
-                            
-                        </div>
-                        
-                    </div>
-                </div>
-            </article>
-        </div>
-        
-        <div class="cd-timeline-block">
-
-            
-            
-
-            
-            
-
-            
-            <div class="cd-timeline-img day" data-aos="zoom-in-up">
-                <span>26</span>
-            </div>
-            <article class="cd-timeline-content" data-aos="fade-up">
-                <div class="article col s12 m6">
-                    <div class="card">
-                        <a href="/2022/06/26/blog/">
-                            <div class="card-image">
-                                
-                                
-                                <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Blog">
-                                
-                                <span class="card-title">Blog</span>
-                            </div>
-                        </a>
-                        <div class="card-content article-content">
-                            <div class="summary block-with-text">
-                                
-                                    hexo shexo s
-1
-
-启动本地服务器，用于预览主题。默认地址： http://localhost:4000/
-
-hexo s 是 hexo server 的缩写，命令效果一致；
-预览的同时可以修改文章内容或主题代码，保存后刷新页面
-                                
-                            </div>
-                            <div class="publish-info">
-                                <span class="publish-date">
-                                    <i class="far fa-clock fa-fw icon-date"></i>2022-06-26
-                                </span>
-                                <span class="publish-author">
-                                    
-                                    <i class="fas fa-user fa-fw"></i>
-                                    君子兰
-                                    
-                                </span>
-                            </div>
-                        </div>
-
-                        
-                        <div class="card-action article-tags">
-                            
-                            <a href="/tags/blog/"><span class="chip bg-color">blog</span></a>
-                            
-                        </div>
-                        
-                    </div>
-                </div>
-            </article>
-        </div>
-        
-        <div class="cd-timeline-block">
-
-            
-            
-
-            
-            
-
-            
-            <div class="cd-timeline-img day" data-aos="zoom-in-up">
-                <span>24</span>
-            </div>
-            <article class="cd-timeline-content" data-aos="fade-up">
-                <div class="article col s12 m6">
-                    <div class="card">
-                        <a href="/2022/06/24/gao-jing-du-wen-ti/">
-                            <div class="card-image">
-                                
-                                
-                                <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="高精度问题">
-                                
-                                <span class="card-title">高精度问题</span>
-                            </div>
-                        </a>
-                        <div class="card-content article-content">
-                            <div class="summary block-with-text">
-                                
-                                    1，高精度加法模板：
-vector&lt;int&gt; add(vector&lt;int&gt;&amp; A, vector&lt;int&gt;&amp; B) {
-	vector&lt;int&gt; C;
-
-	int t = 0
-                                
-                            </div>
-                            <div class="publish-info">
-                                <span class="publish-date">
-                                    <i class="far fa-clock fa-fw icon-date"></i>2022-06-24
-                                </span>
-                                <span class="publish-author">
-                                    
-                                    <i class="fas fa-user fa-fw"></i>
-                                    君子兰
-                                    
-                                </span>
-                            </div>
-                        </div>
-
-                        
-                        <div class="card-action article-tags">
-                            
-                            <a href="/tags/%E7%AE%97%E6%B3%95/"><span class="chip bg-color">算法</span></a>
-                            
-                            <a href="/tags/%E9%AB%98%E7%B2%BE%E5%BA%A6%E9%97%AE%E9%A2%98/"><span class="chip bg-color">高精度问题</span></a>
-                            
-                        </div>
-                        
-                    </div>
-                </div>
-            </article>
-        </div>
-        
-        <div class="cd-timeline-block">
-
-            
-            
-
-            
-            
-
-            
-            <div class="cd-timeline-img day" data-aos="zoom-in-up">
-                <span>23</span>
-            </div>
-            <article class="cd-timeline-content" data-aos="fade-up">
-                <div class="article col s12 m6">
-                    <div class="card">
-                        <a href="/2022/06/23/shu-zu-qu-chong/">
-                            <div class="card-image">
-                                
-                                
-                                <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="数组去重">
-                                
-                                <span class="card-title">数组去重</span>
-                            </div>
-                        </a>
-                        <div class="card-content article-content">
-                            <div class="summary block-with-text">
-                                
-                                    数组去重
-#include &lt;iostream&gt;
-#include &lt;cstdio&gt;
-#include &lt;vector&gt;
-#include &lt;cstdlib&gt;
-#include &lt;que
-                                
-                            </div>
-                            <div class="publish-info">
-                                <span class="publish-date">
-                                    <i class="far fa-clock fa-fw icon-date"></i>2022-06-23
-                                </span>
-                                <span class="publish-author">
-                                    
-                                    <i class="fas fa-user fa-fw"></i>
-                                    君子兰
-                                    
-                                </span>
-                            </div>
-                        </div>
-
-                        
-                        <div class="card-action article-tags">
-                            
-                            <a href="/tags/C-%E8%AF%AD%E6%B3%95/"><span class="chip bg-color">C++语法</span></a>
+                            <a href="/tags/django%E6%A1%86%E6%9E%B6/"><span class="chip bg-color">django框架</span></a>
                             
                         </div>
                         

@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>生成Django页面并备份项目</title>
+      <link href="/2022/08/05/sheng-cheng-django-ye-mian-bing-bei-fen-xiang-mu/"/>
+      <url>/2022/08/05/sheng-cheng-django-ye-mian-bing-bei-fen-xiang-mu/</url>
+      
+        <content type="html"><![CDATA[<p>1.打开tmux</p><p>2.创建django项目acapp</p><pre class="line-numbers language-none"><code class="language-none">django-admin startproject acapp<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p><img src="https://mackdown01.oss-cn-beijing.aliyuncs.com/202208052144502.png" alt="image-20220805214427456"></p><p>3.配置git:</p><pre class="line-numbers language-none"><code class="language-none">ssh-keygen # 生成密钥用于连接到ac git上面cd .ssh/cat id_rsa.pub #将其复制进ac git的ssh里<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>在git偏好设置中，打开ssh密钥，添加一下刚才生成的公钥</p><pre class="line-numbers language-none"><code class="language-none">git init # 进到acapp中将其配置成git仓库<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p><img src="https://mackdown01.oss-cn-beijing.aliyuncs.com/202208052151832.png" alt="image-20220805215131771"></p><p>打开git，在git上创建一个仓库（项目）按照下面的提示在acs里面配置一下git</p><pre class="line-numbers language-none"><code class="language-none">git config --global user.name xxxgit config --global user.email xxx@xxx.comgit add .git commit -m "xxx"git remote add origin git@git.acwing.com:xxx/XXX.git #建立连接git push --set-upstream origin master<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>4.再打开一个tmux，(一个tmux用于维护控制台，另一个tmux用于开发)跑一下我们的项目</p><pre class="line-numbers language-none"><code class="language-none">python3 manage.py runserver 0.0.0.0:8000<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>5.添加IP</p><pre class="line-numbers language-none"><code class="language-none">ag ALLOWED_HOSTS #全文搜索<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>找到这个字段所在位置，并将自己的IP地址添加到里面<br>便可用 IP地址：8000 打开django页面</p><p>6.git 一下代码<br>注意：在git仓库的根目录下（acapp）,vim .gitignore<br>在文件里面写上 **/<strong>pycache</strong>(两个杠) #__pycache__是python自编译的文件，提高运行速度，不需要维护<br>再去添加文件的时候就不会再添加这类不必要的文件</p><p><img src="https://mackdown01.oss-cn-beijing.aliyuncs.com/202208052222640.png" alt="image-20220805222211598"></p><p><img src="https://mackdown01.oss-cn-beijing.aliyuncs.com/202208052223952.png" alt="image-20220805222309900"></p><p>db.sqlite3是数据库，自己开发的时候可维护</p><p>7.创建gameapp</p><pre class="line-numbers language-none"><code class="language-none">python3 manage.py startapp game # 创建game.app<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p><img src="https://mackdown01.oss-cn-beijing.aliyuncs.com/202208052234394.jpg" alt="SharedScreenshot2"></p><p>8.登录django管理员界面</p><pre class="line-numbers language-none"><code class="language-none">ctrl c 先关掉控制台python3 manage.py migrate #同步一下数据库的修改python3 manage.py createsuperuser # 创建管理员账号pyhton3 manage.py runserver 0.0.0.0:8000 # 启动控制台IP地址：8000/admin # 进到管理员登录界面，输入一下刚才创建的账号即可进到管理员界面<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>9.文件操作</p><p><strong>django支持创建多个app,建议只创建一个</strong></p><pre class="line-numbers language-none"><code class="language-none">cd gametouch urls.pymkdir templatesvim views # 定义一个index函数 视频位置 1:00:00vim urls.py # 写一下路由cd acapp vim urls.py # 将刚才的路由写到总路由里面<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p><img src="https://mackdown01.oss-cn-beijing.aliyuncs.com/202208052252317.png" alt="image-20220805225203265"></p><pre class="line-numbers language-none"><code class="language-none">models：存储各种数据结构（class等）views：存储函数——函数逻辑urls：路由，服务端点一个位置返回一个地址，urls判断访问哪个函数templates：存储网页模板，必须是文件夹（存储html）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><p>models默认是普通文件，当工程较大时，会将其变为文件夹，形成树状结构（在python中将文件转化为文件夹非常简单）</p><p><img src="https://mackdown01.oss-cn-beijing.aliyuncs.com/202208052250893.png" alt="image-20220805225048827"></p><p>10.git一下代码，完工</p><pre class="line-numbers language-none"><code class="language-none">我配好环境的地址："http://49.233.5.24:8000/"项目地址: "https://git.acwing.com/ChenC/acapp2.0"<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> django框架 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>常用命令02</title>
       <link href="/2022/07/17/chang-yong-ming-ling-02/"/>
       <url>/2022/07/17/chang-yong-ming-ling-02/</url>
